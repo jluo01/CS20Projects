@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Free Travel</title>
+	<style type="text/css">
+        
+		@media (min-width: 700px){
+            
+            .locationHeading {
+                height:auto; 
+                max-width:fit-content; 
+                vertical-align:middle; 
+                padding-top: 30%; 
+                padding-left:7%;
+                font-size:36pt;
+            }
+            .subheading{
+                font-size:24pt
+            }
+			.container{
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-auto-rows: minmax(400px,auto);
+				grid-gap: 0.5em;
+
+			}
+
+			.container div:nth-child(odd){
+				background-color: #ddd;
+			} 
+
+			.container div:nth-child(even){
+				background-color: #bbb;
+			} 
+
+			.box1{
+				text-align: center;
+				height:700px;
+				grid-column: 1/4;
+                background-image: url(Boston2.jpg); 
+                background-size:cover;
+                background-attachment: fixed;
+                position:relative;
+			}
+
+			.box2{
+				grid-column: 1/3;
+                background-image: url(SanFrancisco.jpg);
+                background-size:cover;
+                background-position-y: center;
+                position:relative;
+
+			}
+			.box5{
+				grid-column: 2/4;
+                background-image: url(Boston.jpg);
+                background-size:cover;
+                background-position-y: center;
+                position:relative;
+			}
+			.box6{
+				grid-column: 1/3;
+                background-image:url(NYC.jpg);
+                background-size:cover;
+                background-position-y: center;
+                /*background-attachment:fixed;*/
+			}
+
+
+		}
+
+		@media (max-width: 700px){
+			.container{
+				display: grid;
+				grid-auto-columns: 1fr;
+				grid-auto-rows: minmax(400px,auto);
+				grid-gap: 0.5em;
+			}
+			.container div:nth-child(odd){
+				background-color: #ddd;
+			} 
+
+			.container div:nth-child(even){
+				background-color: #bbb;
+			} 
+
+			.box1{
+				height: 700px;
+			}
+		}
+		.footer{
+			background-color: #ccc;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class = "container">
+		<div class="box1"> 
+            <div id = "hero" >
+                <div style = "position:absolute; top:45%; left:40%; background-color:rgba(221,221,221,0.7); font-family:Arial, Helvetica, sans-serif; font-size:48pt; color:Blue">
+                    United States
+                </div>
+            </div>
+        </div>
+    	<div class="box2"></div>
+    	<div class="box3">
+            <div class = "locationHeading">
+                San Francisco
+                <div class = subheading>
+                    Bohemian, Progressive, Wild.
+                </div>
+            </div>
+            Known as the "City by the Bay", San Francisco's position as a 
+            key tech and financial hub attracts travellers from around the world. 
+            Whether it's driving down Lombard Street, shopping in Union Square,
+            hiking in the Presidio, there's no shortage of sights 
+            and activities in this city. 
+        </div>
+    	<div class="box4">
+            <div class = "locationHeading">
+                Boston
+                <div class = subheading>Classic, Contemporary, Advanced.</div>
+            </div>
+            Boston is one of America's oldest cities. You can enjoy the rich 
+            history the city has to offer, and you can also enjoy the city's 
+            more contemporary offerings. Boston has a robust financial services 
+            industry, biotech startups, and some of the world's leading 
+            higher education institutions. It's no wonder that Boston is high 
+            on the list for many travellers. 
+        </div>
+    	<div class="box5"></div>
+    	<div class="box6"></div>
+    	<div class="box7">
+            <div class = "locationHeading">
+                New York
+                <div class = subheading>Energy, Fame, Greatness. </div>
+            </div>
+            A city that needs no introduction. New York City has everything: 
+            bustling nightlife, rich culture, incredible food, and towering 
+            skyscrapers. New York cannot be summed up in a paragraph - come 
+            experience it yourself! 
+        </div>
+	</div>
+	<div class="footer">footer</div>
+	
+    
+</body>
+</html>
