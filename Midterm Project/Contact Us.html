@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact Us - Free Travel</title>
+	<style type="text/css">
+		@media (min-width: 900px){
+			.container{
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-auto-rows: minmax(400px,auto);
+				grid-gap: 0.5em;
+
+			}
+
+			.box1{
+				text-align: center;
+				height:300px;
+				grid-column: 1/4;
+				background-image: url(contactbanner1.jpg); 
+				background-size:cover; 
+				font-size: 50px; 
+				box-sizing: border-box;
+				padding: 20px;
+			}
+
+            .box2{
+                background-color: #ccc;
+                grid-column: 1/1;
+                text-align: center;
+                padding: 50px;
+
+
+            }
+
+            .box3{
+                grid-column: 2/4;
+                text-align: center;
+                padding: 50px;
+
+            }
+
+		}
+
+		@media (max-width: 900px){
+			.container{
+				display: grid;
+				grid-auto-columns: 1fr;
+				grid-auto-rows: minmax(400px,auto);
+				grid-gap: 0.5em;
+			}
+			.box1{
+				text-align: center;
+				height:300px;
+				grid-column: 1/4;
+				background-image: url(contactbanner1.jpg); 
+				background-size:cover; 
+				font-size: 50px; 
+				box-sizing: border-box;
+				padding: 20px;
+			}
+            .box2{
+                background-color: #ccc;
+                grid-column: 1/4;
+                text-align: center;
+                padding: 50px;
+
+            }
+
+            .box3{
+                grid-column: 1/4;
+                text-align: center;
+                padding: 50px;
+
+
+            }
+
+		}
+
+		.footer{
+			background-color: #ccc;
+			margin-top: 10px;
+		}
+	</style>
+	<link type="text/css" href="style.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="navbar">
+		<a href="https://www.google.com">
+			<button class="logo"></button>
+	    </a>
+		<nav class="navbar-text">
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Service</a></li>
+				<li><a href="">About&nbspUs</a></li>
+				<li><a href="">Contact</a></li>
+			</ul>
+		</nav>
+        
+		<div class="hamburger">
+			<div class="bar"></div>
+			<div class="bar"></div>
+			<div class="bar"></div>
+	    </div>
+	<div class = "container">
+		<div class="box1">
+			<h1>Contact Us</h1>
+		</div>
+        <div class="box2">
+            <p><strong>CALL US</strong></p>
+            <p>+1 123 456 7890</p>
+            <br>
+            <br>
+            <p><strong>EMAIL US</strong></p>
+            <p>ciao@outthere.com</p>
+        </div>
+        <div class="box3">
+            <p> Connect with us and our consultants will reply in 24 hours! </p>
+            <form>
+                First Name: 
+                <input type="text" name="firstName" id="firstName">  <br />
+                Last Name:
+                <input type="text" name="lastName" id="lastName"> <br />
+                Email:
+                <input type="text" name="email" id="email"> <br />
+                Message:
+                <input type="text" name="email" id="email"> <br />
+                <input type="button" value="Submit"> <br />  
+            </form>
+        </div>
+    </div>
+	<div class="footer">footer</div>
+</body>
+</html>

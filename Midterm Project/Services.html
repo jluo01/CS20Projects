@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Services - Free Travel</title>
+	<style type="text/css">
+		@media (min-width: 900px){
+			.container{
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-auto-rows: minmax(400px,auto);
+				grid-gap: 0.5em;
+
+			}
+
+			.box1{
+				text-align: center;
+				height:600px;
+				grid-column: 1/4;
+				background-image: url(servicesbanner.jpg); 
+				background-size:cover; 
+				font-size: 50px; 
+				box-sizing: border-box;
+				padding: 150px;
+			}
+
+			.transition{
+				border: 1px black solid;
+				text-align: center;
+				height: 10px;
+				grid-column: 1/4;
+				font-size: 40px;
+				box-sizing: border-box;
+				background-color: white;
+			}
+
+			.box2{
+				grid-column: 1/3;
+				font-size: 30px; 
+				background-image: url(hotel1.jpg); 
+				
+				background-size:cover; 
+				box-sizing: border-box;
+			}
+
+			.box2:hover{
+				transform: translateX(5px);
+				transition: 0.5s all ease;
+
+			}
+
+			.box5{
+				grid-column: 2/4;
+				font-size: 30px; 
+				background-image: url(car1.jpg); 
+				background-size:cover; 
+				box-sizing: border-box;
+				text-align: right;
+			}
+			.box5:hover{
+				transform: translateX(5px);
+				transition: 0.5s all ease;
+
+			}
+			.box6{
+				grid-column: 1/3;
+				font-size: 30px; 
+				background-image: url(flight.jpg); 
+				background-size:cover; 
+				box-sizing: border-box;
+			}
+			.box6:hover{
+				transform: translateX(5px);
+				transition: 0.5s all ease;
+
+			}
+
+			.footer{
+				margin-top: 400px;
+			}
+
+			#result{
+				border: 1px black solid;
+				grid-template-columns: 1/4;
+			}
+
+
+		}
+
+		@media (max-width: 900px){
+			.container{
+				display: grid;
+				grid-auto-columns: 1fr;
+				grid-auto-rows: minmax(400px,auto);
+				grid-gap: 0.5em;
+			}
+			.container div:nth-child(odd){
+				background-color: #ddd;
+			} 
+
+			.container div:nth-child(even){
+				background-color: #bbb;
+			} 
+
+			.box1{
+				text-align: center;
+				height:600px;
+				grid-column: 1/4;
+				background-image: url(servicesbanner.jpg); 
+				background-size:cover; 
+				font-size: 50px; 
+				box-sizing: border-box;
+				padding: 150px;
+			}
+		}
+
+		.footer{
+			background-color: #ccc;
+			margin-top: 10px;
+		}
+	</style>
+	<link type="text/css" href="style.css" rel="stylesheet">
+	<script language="javascript">
+		function buttonPress() {
+			//validate
+			if (document.destination.destination.value == "" || document.numberTravelers.numberTravelers.value == 0 ||
+			    document.numberTravelers.numberDays.value == 0  ) {
+				alert("Please fill in all the fields");
+			} else {
+				//get form data
+				const destForm = document.getElementById('destination');
+				dest = destForm.elements[0];
+				Dest = dest.value;
+				const numTravelerForm = document.getElementById('numberTravelers');
+				numTravelers = numTravelerForm.elements[0];
+				NumTravelers = numTravelers.value;
+				const numDayForm = document.getElementById('numberDays');
+				numDays = numDayForm.elements[0];
+				NumDays = numDays.value;
+				if (Dest == "Asia1" || Dest == "Asia2" || Dest == "Asia3") {
+					cost = NumTravelers * NumDays * 100;
+				} else if (Dest == "Europe1" || Dest == "Europe2" || Dest == "Europe3") {
+					cost = NumTravelers * NumDays * 200;
+				} else if (Dest == "Americas1" || Dest == "Americas2" || Dest == "Americas3") {
+					cost = NumTravelers * NumDays * 150;
+				}
+				output = "Your estimated cost is $" + cost + "<br / >"; 
+				document.getElementById("result").innerHTML = output;
+			}            
+		}         
+	</script>
+
+</head>
+<body>
+    <div class="navbar">
+		<a href="https://www.google.com">
+			<button class="logo"></button>
+	    </a>
+		<nav class="navbar-text">
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Service</a></li>
+				<li><a href="">About&nbspUs</a></li>
+				<li><a href="">Contact</a></li>
+			</ul>
+		</nav>
+        
+		<div class="hamburger">
+			<div class="bar"></div>
+			<div class="bar"></div>
+			<div class="bar"></div>
+	</div>
+
+	<div class = "container">
+		<div class="box1">
+			<h1>Services</h1>
+		</div>
+		<div class="transition">
+			<h2>Enjoy best services at Free Travel</h2>
+		</div>
+    	<div class="box2">
+			<h2 style="color:white; padding-inline-start: 25px;">Hotels</h2>
+		</div>
+    	<div class="box3">
+			<p>Because of our global relationships, we are able to arrange customized and top-quality hotel services 
+				that others can’t. That means that we can offer you tailored special touches such as room upgrades,
+				late check-out, and more, based on your personal preferences.
+			</p>
+		</div>
+    	<div class="box4">
+			<p>Want to drive around the city and explore on your own? We provide car rental services at all our 
+				destinations.
+			</p>
+		</div>
+    	<div class="box5">
+			<h2 style="padding-inline-end: 25px;">Cars</h2>
+		</div>
+    	<div class="box6">
+			<h2 style="color:white; padding-inline-start: 25px;">Flights</h2>
+		</div>
+    	<div class="box7">
+			<p>We are well-connected to airlines around the globe to provide you with the best flight experience.
+				We can offer you exclusive access to VIP lounges, cabin upgrades, fast check-in's, and more. 
+			</p>
+		</div>
+		<div class="transition">
+			<h2>Estimating Your Travel Costs</h2>
+			<p style="font-size:20px">Use the estimating tool below to get a sense of your approximate travel cost: </p>
+			<form name="destination" id="destination">
+				Destination:
+				<select name="destination" id="destination" size="1">
+					<option value="Asia1">Asia 1</option>
+					<option value="Asia2">Asia 2</option>
+					<option value="Asia3">Asia 3</option>
+					<option value="Europe1">Europe 1</option>
+					<option value="Europe2">Europe 2</option>
+					<option value="Europe3">Europe 3</option>
+					<option value="Americas1">Americas 1</option>
+					<option value="Americas2">Americas 2</option>
+					<option value="Americas3">Americas 3</option>
+				</select>
+			</form>
+			<form name="numberTravelers" id="numberTravelers">
+				Number of Travelers:
+				<input type="number" name ="numberTravelers" id="numberTravelers">
+			</form>
+			<form name="numberDays" id="numberDays">
+				Duration (days):
+				<input type="number" name ="numberDays" id="numberDays">
+			</form>
+			<input type="button" name ="Submit" value="Submit" id="Submit" onclick="buttonPress()"> <br /> <br /> <br />
+			
+		</div>
+	</div>
+	<div id="result">&nbsp</div>
+	<div class="footer">footer</div>
+</body>
+</html>
