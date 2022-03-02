@@ -2,44 +2,51 @@
 <html>
 <head>
 	<title>Free Travel</title>
+	<link rel="stylesheet" type="text/css" href="continent.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">
 		@media (min-width: 700px){
 			.container{
-				margin: 2em;
+				margin: 3em;
 				display: grid;
 				grid-template-columns: 1fr 1fr 1fr;
 				grid-auto-rows: minmax(400px,auto);
 				grid-gap: 0.8em;
 			}
 
-			.container div:nth-child(odd){
-				background-color: #ddd;
-			} 
-
-			.container div:nth-child(even){
-				background-color: #bbb;
-			} 
-
 			.box1{
-				text-align: center;
+				margin-bottom: 40px;
+				display:flex;
+				justify-content: center;
+				align-items: center;
 				height:700px;
 				grid-column: 1/4;
+				background-image: url(banner_asia.jpg);
+				background-size:cover;
+			}
+			.box1 h1 {
+				font-size: 120px;
+				color: white;
+				letter-spacing: 0.3em;
 			}
 
 			.box2{
-				display: flex;
 				position: relative;
-				text-align: center;
 				grid-column: 1/3;
+				background-image: url(shanghai.jpg);
+				background-size:cover;
 			}
 			.box5{
 				grid-column: 2/4;
 				position: relative;
+				background-image: url(tokyo.jpg);
+				background-size:cover;
 			}
 			.box6{
 				grid-column: 1/3;
 				position: relative;
+				background-image: url(bangkok.jpg);
+				background-size:cover;
 			}
 
 			.centered {
@@ -50,7 +57,7 @@
 				letter-spacing: 0.3em;
 			}
 
-			.top-right {
+			/* .top-right {
 				position: absolute;
 				top: 20%;
 				right: 15%;
@@ -69,7 +76,7 @@
 				margin: 35px;
 				font-size: 18px;
 				line-height: 1.5em;
-			}
+			} */
 		}
 
 		@media (max-width: 700px){
@@ -99,43 +106,56 @@
 	</style>
 </head>
 <body>
+	<div class="navbar">
+		<a href="https://www.google.com">
+			<button class="logo"></button>
+	    </a>
+		<nav class="navbar-text">
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Service</a></li>
+				<li><a href="AboutUs.html">About&nbspUs</a></li>
+				<li><a href="">Contact</a></li>
+			</ul>
+		</nav>
+        
+		<div class="hamburger">
+			<div class="bar"></div>
+			<div class="bar"></div>
+			<div class="bar"></div>
+	    </div>
+	</div>
+
 	<div class = "container">
 		<div class="box1">
-			<img src="banner_asia.jpg" width="100%" alt="Asia banner">
-			<div class="centered">Asia</div>
+			<h1>Asia</h1>
 		</div>
     	
-		<div class="box2">
-			<img src="shanghai.jpg" width="100%" alt="Shanghai">
-			<div class="top-right">Shanghai</div> 
-		</div>
+		<div class="box2"></div>
 	
     	<div class="box3">
-		<p>
+		<div class="locationHeading">Shanghai</div>
+		<div class="supportText">
 			As a wonderfully diverse cosmopolitan, Shanghai is always a must-stop for both local and international travelers. No matter what you are feeling for, Shanghai has something to offer: spiritual temples, inspiring museums, modern architecture, classical parks, tea houses, and so much more. Often called the Paris of the East, Shanghai celebrates its prosperity with monuments like the Oriental Pearl TV Tower. Besides, a plate of classic steamed soup dumplings <em>(xiaolongbao)</em> at any local restaurant will be sure to brighten up your day. 
-		</p>
+		</div>
 		</div>
 
     	<div class="box4">
-		<p>
+		<div class="locationHeading">Tokyo</div>
+		<div class="supportText">
 			Japan's capital, Tokyo, hosts myriad choices of sight-watching, shopping, and entertainment for its visitors. Ancient temples nestled among modern skyscrapers, beautiful cherry blossoms in the late spring, vibrant night scenes in Tokyo's central district... What's more, you won't ever need to scratch your head over what to eat when traveling in Tokyo. Whether you are a sushi lover or a ramen craver, rest assured, Tokyo will satisfy your appetite. 
-		</p>
+		</div>
 		</div>
 
-    	<div class="box5">
-			<img src="tokyo.jpg" width="100%" alt="Tokyo">
-			<div class="top-left">Tokyo</div> 
-		</div>
+    	<div class="box5"></div>
 
-    	<div class="box6">
-			<img src="bangkok.jpg" width="100%" alt="Bangkok">
-			<div class="top-right">Bangkok</div> 
-		</div>
+    	<div class="box6"></div>
 
     	<div class="box7">
-		<p>	
+		<div class="locationHeading">Bangkok</div>
+		<div class="supportText">
 			Holding its reputation as the "City of Angels," Bangkok thrives on its enriching culture and buzzing city life. Whether it's magnificent temples, historic markets, or modern skyscrapers, Bangkok has her story to share. Here, you can try the famed tuk-tuks, which are rickshaws that offer a super exciting yet economical way to travel around. If you are a wildlife advocator, you would not want to miss spending a day or two at numerous elephant sanctuaries.
-		</p>
+		</div>
 		</div>
 	</div>
 
