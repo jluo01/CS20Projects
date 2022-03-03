@@ -12,6 +12,7 @@
         font-family: 'Poppins', sans-serif;
         /*border:solid blue 2px;*/
     }
+
     .locationHeading:hover{
         padding-bottom:50%;
         padding-top:15%;
@@ -20,12 +21,14 @@
         background-color:transparent;
         transform:translateY(-50px);
     }
+
     .locationHeading:hover + .supportText{
         display:block;
     }
+
     .supportText{
         font-size:18pt;
-        padding-top:7.5em;
+        padding-top:6em;
         line-height: 1.3em;
         padding-left:10%;
         padding-right:10%;
@@ -34,19 +37,21 @@
 
         display:none;
     }
+
     .subheading{
-        font-size:24pt;
+        font-size:18pt;
         background-color:transparent;
         font-family: 'Poppins', sans-serif;
     }
+
     .container{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-auto-rows: minmax(400px,auto);
+        grid-auto-rows: minmax(430px,auto);
         grid-gap: 0.8em;
         margin:3em;
-
     }
+
     h1{
         font-size:120px;
         color:white;
@@ -64,7 +69,6 @@
         background-size:cover;
         position:relative;
         margin-bottom:40px;
-        background-position:fixed;
     }
 
     .box2{
@@ -87,6 +91,7 @@
     }
     .box3,.box4,.box7 {
         background-color:#e5e0db;
+        position:relative;
     }
 
 }
@@ -114,13 +119,6 @@
     background-color: #ccc;
     margin-top: 10px;
 }
-
-
-hr{
-    width:60%;
-    margin-bottom:-50px;
-}
-
 
 
 /* JYL Styles Above*/
@@ -310,4 +308,3 @@ hr{
     }
 
 }
-
