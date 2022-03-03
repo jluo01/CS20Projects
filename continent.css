@@ -1,3 +1,131 @@
+@media (min-width: 700px){
+            
+    .locationHeading {
+        z-index: 20;
+        height:100%; 
+        width:100%; 
+        vertical-align:middle; 
+        position:absolute;
+        padding-top:30%;
+        padding-left:10%;
+        font-size:40pt;
+        background-color:transparent;
+        font-family: 'Poppins', sans-serif;
+        /*border:solid blue 2px;*/
+    }
+    .locationHeading:hover{
+        padding-bottom:50%;
+        padding-top:15%;
+        height:500px;
+        transition:0.5s all ease;
+        background-color:transparent;
+        transform:translateY(-50px);
+    }
+    .locationHeading:hover + .supportText{
+        border:red solid;
+        display:block;
+    }
+    .supportText{
+        font-size:18pt;
+        padding-top:6.5em;
+        line-height: 1.3em;
+        padding-left:10%;
+        padding-right:10%;
+        font-family: 'League Spartan', sans-serif;
+        height:100%;
+
+        display:none;
+    }
+    .subheading{
+        font-size:24pt;
+        background-color:transparent;
+        font-family: 'Poppins', sans-serif;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: minmax(400px,auto);
+        grid-gap: 0.8em;
+        margin:3em;
+
+    }
+    h1{
+        font-size:120px;
+        color:white;
+        letter-spacing:0.1em;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .box1{
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        text-align: center;
+        height:700px;
+        grid-column: 1/4;
+        background-image: url(Zurich.jpg); 
+        background-size:cover;
+        position:relative;
+        margin-bottom:40px;
+    }
+
+    .box2{
+        grid-column: 1/3;
+        background-image: url(Mountains.jpg);
+        background-size:cover;
+        background-position-y: center;
+        position:relative;
+
+    }
+    .box5{
+        grid-column: 2/4;
+        background-image: url(Zurich2.jpg);
+        background-size:cover;
+        background-position-y: center;
+        position:relative;
+    }
+    .box6{
+        grid-column: 1/3;
+        background-image:url(Lucerne.jpg);
+        background-size:cover;
+        background-position-y: center;
+    }
+    .box3,.box4,.box7 {
+        background-color:#e5e0db;
+    }
+
+}
+
+@media (max-width: 700px){
+    .container{
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: minmax(400px,auto);
+        grid-gap: 0.5em;
+    }
+    .container div:nth-child(odd){
+        background-color: #ddd;
+    } 
+
+    .container div:nth-child(even){
+        background-color: #bbb;
+    } 
+
+    .box1{
+        height: 700px;
+    }
+}
+.footer{
+    background-color: #ccc;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+/* JYL Styles Above*/
 *{
     box-sizing: border-box;
     padding: 0;

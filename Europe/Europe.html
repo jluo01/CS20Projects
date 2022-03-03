@@ -3,114 +3,11 @@
 <head>
 	<title>Free Travel</title>
     <link rel="stylesheet" type="text/css" href="../continent.css">
-	<style type="text/css">
-		@media (min-width: 700px){
-            
-            .locationHeading {
-                z-index: 20;
-                height:100%; 
-                width:100%; 
-                vertical-align:middle; 
-                position:absolute;
-                padding-top:30%;
-                padding-left:10%;
-                font-size:36pt;
-                background-color:transparent;
-                border:solid blue 2px;
-            }
-            .locationHeading:hover{
-                padding-bottom:50%;
-                padding-top:5%;
-                top:10%;
-                height:400px;
-                transition:0.5s all ease;
-                background-color:transparent;
-                transform:translateY(-50px);
-            }
-            .locationHeading:hover + .supportText{
-                border:red solid;
-                display:block;
-            }
-            .supportText{
-                font-size:18pt;
-                padding-top:6.5em;
-                line-height: 1.3em;
-                padding-left:10%;
-                padding-right:10%;
-                height:100%;
-                display:none;
-            }
-            .subheading{
-                font-size:24pt;
-                background-color:transparent;
-            }
-			.container{
-				display: grid;
-				grid-template-columns: 1fr 1fr 1fr;
-				grid-auto-rows: minmax(400px,auto);
-				grid-gap: 0.5em;
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&family=Poppins&display=swap" rel="stylesheet">
+    
 
-			}
-
-			.box1{
-				text-align: center;
-				height:700px;
-				grid-column: 1/4;
-                background-image: url(Zurich.jpg); 
-                background-size:cover;
-                /*background-attachment: fixed;*/
-                position:relative;
-			}
-
-			.box2{
-				grid-column: 1/3;
-                background-image: url(Mountains.jpg);
-                background-size:cover;
-                background-position-y: center;
-                position:relative;
-
-			}
-			.box5{
-				grid-column: 2/4;
-                background-image: url(Zurich2.jpg);
-                background-size:cover;
-                background-position-y: center;
-                position:relative;
-			}
-			.box6{
-				grid-column: 1/3;
-                background-image:url(Lucerne.jpg);
-                background-size:cover;
-                background-position-y: center;
-			}
-
-
-		}
-
-		@media (max-width: 700px){
-			.container{
-				display: grid;
-				grid-auto-columns: 1fr;
-				grid-auto-rows: minmax(400px,auto);
-				grid-gap: 0.5em;
-			}
-			.container div:nth-child(odd){
-				background-color: #ddd;
-			} 
-
-			.container div:nth-child(even){
-				background-color: #bbb;
-			} 
-
-			.box1{
-				height: 700px;
-			}
-		}
-		.footer{
-			background-color: #ccc;
-			margin-top: 10px;
-		}
-	</style>
 </head>
 <body>
     <div class="navbar">
@@ -133,11 +30,11 @@
 	    </div>
 	</div>
 	<div class = "container">
-		<div class="box1">Box1 
+		<div class="box1"> 
             <div id = "hero" >
-                <div style = "position:absolute; top:50%; left:50%; background-color: rgba(255,255,255,1); font-family:Arial, Helvetica, sans-serif; font-size:100pt; color:Brown">
+                <h1>
                     Europe
-                </div>
+                </h1>
             </div>
         </div>
 
@@ -174,10 +71,10 @@
         </div>
     	<div class="box5">Box5</div>
     	<div class="box6">Box6</div>
-    	<div class="box7"style = "position:relative">Box7
+    	<div class="box7"style = "position:relative">
             <div class = "locationHeading">
                 Lucerne
-                <div style = "font-size:24pt">Historic, beautiful, idylic.</div>
+                <div class = "subheading">Historic, beautiful, idylic.</div>
             </div>
             <div class = "supportText">
                 Lucerne brings artists and music lovers from around the world to its
