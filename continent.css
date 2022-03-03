@@ -1,5 +1,4 @@
 @media (min-width: 700px){
-            
     .locationHeading {
         z-index: 20;
         height:100%; 
@@ -22,7 +21,6 @@
         transform:translateY(-50px);
     }
     .locationHeading:hover + .supportText{
-        border:red solid;
         display:block;
     }
     .supportText{
