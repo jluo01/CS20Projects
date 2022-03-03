@@ -2,37 +2,43 @@
 <html>
 <head>
 	<title>Free Travel</title>
+    <link rel="stylesheet" type="text/css" href="../continent.css">
 	<style type="text/css">
-        
 		@media (min-width: 700px){
+            
             .locationHeading {
-                z-index = 20;
-                height:fit-content; 
-                width:fill;
-                max-width:fit-content;  
+                z-index: 20;
+                height:100%; 
+                width:100%; 
                 vertical-align:middle; 
                 position:absolute;
-                top:30%;
-                padding-left:7%;
+                padding-top:30%;
+                padding-left:10%;
                 font-size:36pt;
                 background-color:transparent;
                 border:solid blue 2px;
             }
             .locationHeading:hover{
                 padding-bottom:50%;
+                padding-top:5%;
                 top:10%;
+                height:400px;
                 transition:0.5s all ease;
                 background-color:transparent;
                 transform:translateY(-50px);
             }
-            .supportText{
-                padding-left:10%;
-                display:none;
-
-            }
-            .supportText:hover{
+            .locationHeading:hover + .supportText{
+                border:red solid;
                 display:block;
-                transform: translateX(10px); 
+            }
+            .supportText{
+                font-size:18pt;
+                padding-top:6.5em;
+                line-height: 1.3em;
+                padding-left:10%;
+                padding-right:10%;
+                height:100%;
+                display:none;
             }
             .subheading{
                 font-size:24pt;
@@ -45,14 +51,6 @@
 				grid-gap: 0.5em;
 
 			}
-
-			.container div:nth-child(odd){
-				/* background-color: #ddd; */
-			} 
-
-			.container div:nth-child(even){
-				background-color: #bbb;
-			} 
 
 			.box1{
 				text-align: center;
@@ -115,6 +113,25 @@
 	</style>
 </head>
 <body>
+    <div class="navbar">
+		<a href="https://www.google.com">
+			<button class="logo"></button>
+	    </a>
+		<nav class="navbar-text">
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Service</a></li>
+				<li><a href="AboutUs.html">About&nbspUs</a></li>
+				<li><a href="">Contact</a></li>
+			</ul>
+		</nav>
+        
+		<div class="hamburger">
+			<div class="bar"></div>
+			<div class="bar"></div>
+			<div class="bar"></div>
+	    </div>
+	</div>
 	<div class = "container">
 		<div class="box1">Box1 
             <div id = "hero" >
@@ -142,7 +159,7 @@
             </div>
             
         </div>
-    	<div class="box4">
+    	<div class="box4"style = "position:relative">
             <div class = "locationHeading">
                 Zurich: 
                 <div class = subheading>Active, welcoming, luxurious.</div>
@@ -157,7 +174,7 @@
         </div>
     	<div class="box5">Box5</div>
     	<div class="box6">Box6</div>
-    	<div class="box7">Box7
+    	<div class="box7"style = "position:relative">Box7
             <div class = "locationHeading">
                 Lucerne
                 <div style = "font-size:24pt">Historic, beautiful, idylic.</div>
