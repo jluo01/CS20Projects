@@ -41,7 +41,7 @@ hr{
     margin-left: 25px;
     margin-top: 5px;
     margin-bottom: 5px;
-    background-image:url('logo.png') ;
+    background-image:url('../logo.png') ;
     background-size:cover;
     border:none;
 }
@@ -227,8 +227,14 @@ hr{
 }
 
 .footer{
-    position:relative;
-    top:300px;
+    background-color: #e5e0db;
+    margin-top: 10px;
+    padding-top:1em;
+    padding-left:3em;
+    padding-bottom:1em;
+    letter-spacing: 0.1em;
+    font-weight:bold;
+    font-family:'Source Sans Pro', sans-serif;
 }
 
 @media (min-width: 900px){	
@@ -272,6 +278,7 @@ hr{
 
     .navbar-text ul{
         font-family: "Source Sana Pro",sans-serif;
+        font-weight:bold;
         display:flex;
         margin-left: 80px;		
     }
