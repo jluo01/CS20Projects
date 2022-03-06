@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&family=Poppins&family=Source+Sans+Pro:wght@300&display=swap');
 @media (min-width: 900px){
     .locationHeading {
         z-index: 20;
@@ -119,6 +120,10 @@
 .footer{
     background-color: #ccc;
     margin-top: 10px;
+    padding-top:1em;
+    padding-bottom:1em;
+    font-weight:bold;
+    font-family:'Source Sans Pro', sans-serif;
 }
 
 
