@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Services - Free Travel</title>
+	<title>Services</title>
 	<style type="text/css">
 		.box1{
 			background-image: url(servicesbanner.jpg); 
@@ -23,7 +23,6 @@
     		position: absolute;
 			width:80%;
     		left: 10%;
-			/* margin-top:50px; */
 		}
 		.heading{
 			font-size: 40pt;
@@ -132,10 +131,6 @@
 				position:relative;
 				margin-top: 70px;
 			}
-			.locationHeading:hover{
-				transform:translateY(-10px);
-			}
-
 		}
 
 		@media (max-width: 700px){
@@ -166,6 +161,17 @@
 			Dest = dest.value;
 			NumTravelers = numTravelers.value;
 			NumDays = numDays.value;
+			//validate (check for negative inputs)
+			while (NumTravelers <= 0 || NumDays <= 0) {
+				alert("Please enter a valid number");
+				costForm = document.getElementById('cost');
+				dest = costForm.elements[0];
+				numTravelers = costForm.elements[1];
+				numDays = costForm.elements[2];
+				Dest = dest.value;
+				NumTravelers = numTravelers.value;
+				NumDays = numDays.value;
+			}
 			cost = 0;
 			if (Dest == "Asia1" || Dest == "Asia2" || Dest == "Asia3") {
 				cost = NumTravelers * NumDays * 100;
@@ -203,17 +209,18 @@
 	<div class = "container">
 		<div class="box1">
 			<h1>Services</h1>
+			<!-- <h2>Top quality outThere</h2> -->
 		</div>
     	<div class="box2"></div>
     	<div class="box3">
-			<div class="locationHeading">Hotels</div>
+			<div class="locationHeading" style="transform:translateY(-10px);">Hotels</div>
 			<div class="supportText">
 				Our global relationships enable us to offer top-quality hotel services that others can’t. 
 				This includes room upgrades, late check-out, and more, based on your personal preference.
 			</div>
 		</div>
     	<div class="box4">
-			<div class="locationHeading">Car Rentals</div>
+			<div class="locationHeading" style="transform:translateY(-10px);">Car Rentals</div>
 			<div class="supportText">
 				Want to drive around the city and explore on your own? We provide car rental services at all our 
 				destinations.
@@ -222,7 +229,7 @@
     	<div class="box5"></div>
     	<div class="box6"></div>
     	<div class="box7">
-			<div class="locationHeading">Flights</div>
+			<div class="locationHeading" style="transform:translateY(-10px);">Flights</div>
 			<div class="supportText">
 				We are well-connected to airlines around the globe to provide you with the best flight experience.
 				We offer exclusive access to VIP lounges, cabin upgrades, fast check-in's, and more. 
@@ -241,15 +248,15 @@
 						</div>		
 						<div class="form-control">
 							<select name="destination" id="destination" size="1">
-								<option value="Asia1">Asia 1</option>
-								<option value="Asia2">Asia 2</option>
-								<option value="Asia3">Asia 3</option>
-								<option value="Europe1">Europe 1</option>
-								<option value="Europe2">Europe 2</option>
-								<option value="Europe3">Europe 3</option>
-								<option value="Americas1">Americas 1</option>
-								<option value="Americas2">Americas 2</option>
-								<option value="Americas3">Americas 3</option>
+								<option value="Asia1">Shanghai</option>
+								<option value="Asia2">Tokyo</option>
+								<option value="Asia3">Bangkok</option>
+								<option value="Europe1">Murren</option>
+								<option value="Europe2">Zurich</option>
+								<option value="Europe3">Lucerne</option>
+								<option value="Americas1">San Francisco</option>
+								<option value="Americas2">Boston</option>
+								<option value="Americas3">New York</option>
 							</select>
 						</div>
 						<div class="text">
@@ -274,7 +281,8 @@
 					<div id="result">&nbsp</div>
 				</div>
 			</div>
-		</div>	
+		</div>
+	</div>	
 	<div class="footer">footer</div>
 </body>
 </html>
