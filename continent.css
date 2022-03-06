@@ -6,6 +6,7 @@
         vertical-align:middle; 
         position:absolute;
         padding-top:30%;
+        display:inline-block;
         padding-left:10%;
         font-size:40pt;
         background-color:transparent;
@@ -29,6 +30,7 @@
     .supportText{
         font-size:18pt;
         padding-top:6em;
+        display:inline-block;
         line-height: 1.3em;
         padding-left:10%;
         padding-right:10%;
@@ -39,6 +41,7 @@
     }
 
     .subheading{
+        /*display:inline-block;*/
         font-size:18pt;
         background-color:transparent;
         font-family: 'Poppins', sans-serif;
