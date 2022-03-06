@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact Us - Free Travel</title>
+	<style type="text/css">
+		@media (min-width: 900px){
+			.container{
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+				grid-auto-rows: minmax(400px,auto);
+				grid-gap: 0.8em;
+				margin:3em;
+			}
+
+			.box1{
+				height:700px;
+				grid-column: 1/6;
+				background-image: url(contactbanner.jpg); 
+				background-size:cover; 
+				box-sizing: border-box;
+				padding: 150px;
+				align-items: center;
+				display: flex;
+				justify-content:center;
+				margin-bottom: 40px;
+			}
+
+            .box2{
+                background-color: #ccc;
+                grid-column: 1/3;
+                text-align: center;
+                padding-top: 10%;
+				line-height: 2;
+				padding-bottom:10%;
+				border-radius: 10px;
+				box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+			}
+            .box3{
+                grid-column: 3/6;
+                text-align: center;
+				align-items: center;
+				justify-content:center;
+				padding-left: 7%;
+
+            }
+			.navbar-text ul{
+				display:flex;
+				margin-left: 80px;		
+			}
+			h1{
+				color: white;
+				font-size:120px;
+				letter-spacing: 0.1em;
+			}
+
+		}
+
+		@media (max-width: 900px){
+			.container{
+				display: grid;
+				grid-auto-columns: 1fr;
+				grid-auto-rows: minmax(400px,auto);
+				grid-gap: 0.5em;
+			}
+			.box1{
+				text-align: center;
+				height:300px;
+				grid-column: 1/4;
+				background-image: url(contactbanner1.jpg); 
+				background-size:cover; 
+				font-size: 50px; 
+				box-sizing: border-box;
+				padding: 20px;
+			}
+            .box2{
+                background-color: #ccc;
+                grid-column: 1/4;
+                text-align: center;
+				padding-top: 10%;
+				line-height: 2;
+				padding-bottom:10%;
+				border-radius: 10px;
+				box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+                /* padding: 50px; */
+            }
+            .box3{
+                grid-column: 1/4;
+                text-align: center;
+            }
+
+			h1{
+				color: white;
+				font-size:120px;
+				letter-spacing: 0.1em;
+			}
+
+			.logo{
+				margin-left:168%;
+			}
+
+			.navbar{
+				z-index: 20;
+			}
+
+			.navbar-text.active {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				top:70px;
+				height:200px;
+				transform:scale(1);
+				transition: all 0.2s ease;
+			}
+
+			.navbar-text{
+				width: 100%;
+				background-color: rgba(78, 71, 71, 0.5);
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				position: fixed;
+				top:4.35em;
+				transform:scale(0);
+				height:0px;
+			}
+			.navbar-text li{
+				margin-top:18px;
+				margin-bottom: 18px;
+			}
+
+			.navbar-text a{
+				font-size: 20px;
+			}
+			.navbar-text a:hover{
+				border-bottom: 1px white solid;
+			}
+
+			.navbar-text li a{
+				color:white;
+			}
+
+			.hamburger{
+				display: block;
+			}
+
+			.hamburger:hover{
+				cursor: pointer;
+			}
+			.hamburger.active .bar:nth-child(2) {
+				opacity: 0;
+			}
+
+			.hamburger.active .bar:nth-child(1) {
+				transform: translateY(7px) rotate(45deg);
+			}
+
+			.hamburger.active .bar:nth-child(3) {
+				transform: translateY(-7px) rotate(-45deg);
+			}
+
+		}
+
+		.footer{
+			background-color: #ccc;
+			margin-top: 10px;
+		}
+	</style>
+	<link type="text/css" href="contact.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="navbar">
+		<a href="https://www.google.com">
+			<button class="logo"></button>
+	    </a>
+		<nav class="navbar-text">
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Service</a></li>
+				<li><a href="">About&nbspUs</a></li>
+				<li><a href="">Contact</a></li>
+			</ul>
+		</nav>
+        
+		<div class="hamburger">
+			<div class="bar"></div>
+			<div class="bar"></div>
+			<div class="bar"></div>
+	    </div>
+	<div class = "container">
+		<div class="box1">
+			<h1>Contact Us</h1>
+		</div>
+        <div class="box2">
+			<div class="info">
+				<div class="call">
+					<div class="heading">Call Us</div>
+					<div class="text">+1 123 456 7890</div>
+				</div>
+				<br/>
+				<div class="email">
+					<div class="heading">Email Us</div>
+					<div class="text">ciao@outthere.com</div>
+				</div>
+			</div>		
+        </div>
+        <div class="box3">
+			<div class="showcase-form card">
+				<div class="heading">
+					Hear from us in 24 hours!
+				</div>
+            <form>
+				<div class="form-control">
+					<input type="text" name="name" placeholder="Name" required>
+				</div>
+				<div class="form-control">
+					<input type="text" name="email" placeholder="Email" required>
+				</div>
+				<div class="form-control">
+					<input type="text" name="phone" placeholder="Phone number" required>
+				</div>
+				<div class="form-control">
+					<input type="text" name="message" placeholder="What you'd like to learn about" required>
+				</div>
+				<input type="submit" value="Submit" class="btn btn-primary">
+            </form>
+			</div>    
+        </div>
+    </div>
+	<div class="footer">footer</div>
+</body>
+</html>
