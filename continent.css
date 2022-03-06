@@ -1,4 +1,4 @@
-@media (min-width: 700px){
+@media (min-width: 900px){
     .locationHeading {
         z-index: 20;
         height:100%; 
@@ -6,7 +6,6 @@
         vertical-align:middle; 
         position:absolute;
         padding-top:30%;
-        display:inline-block;
         padding-left:10%;
         font-size:40pt;
         background-color:transparent;
@@ -30,7 +29,6 @@
     .supportText{
         font-size:18pt;
         padding-top:6em;
-        display:inline-block;
         line-height: 1.3em;
         padding-left:10%;
         padding-right:10%;
@@ -41,7 +39,6 @@
     }
 
     .subheading{
-        /*display:inline-block;*/
         font-size:18pt;
         background-color:transparent;
         font-family: 'Poppins', sans-serif;
@@ -99,7 +96,7 @@
 
 }
 
-@media (max-width: 700px){
+@media (max-width: 900px){
     .container{
         display: grid;
         grid-auto-columns: 1fr;
@@ -220,7 +217,8 @@ hr{
 
     .navbar-text ul{
         display:flex;
-        margin-left: 80px;		
+        margin-left: 80px;
+        font-family: 'Source Sans Pro', sans-serif;	
     }
 }
 
