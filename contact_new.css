@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&family=Poppins&family=Source+Sans+Pro:wght@300&display=swap');
 .heading{
     font-size: 30pt;
     font-family: 'Poppins', sans-serif;
@@ -155,6 +156,12 @@ hr{
 }
 
 @media (min-width: 900px){	
+    .navbar-text ul{
+        display:flex;
+        margin-left: 80px;		
+        font-weight:bold;
+        font-family:'Source Sans Pro', sans-serif;
+    }
     /* .showcase{
         display:grid;
         grid-template-columns: 1fr 1fr 1fr;
