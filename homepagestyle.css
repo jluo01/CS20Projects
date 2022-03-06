@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -268,6 +271,7 @@ hr{
     }
 
     .navbar-text ul{
+        font-family: "Source Sana Pro",sans-serif;
         display:flex;
         margin-left: 80px;		
     }
