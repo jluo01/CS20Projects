@@ -56,6 +56,22 @@
     transform: scale(0.98)
 }
 
+
+.footer{
+    background-color: #e5e0db;
+    margin-top: 10px;
+    padding-top:1em;
+    padding-left:3em;
+    padding-bottom:1em;
+    letter-spacing: 0.1em;
+    font-weight:bold;
+    font-family:'Source Sans Pro', sans-serif;
+}
+
+    a:visited{
+        color:inherit;
+    }
+
 @media (min-width: 700px){
     
     h1{
@@ -79,10 +95,7 @@
         height: 700px;
     }
 }
-    .footer{
-        background-color: #ccc;
-        margin-top: 10px;
-    }
+
 
 
 /* JYL Styles Above*/
