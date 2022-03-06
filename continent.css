@@ -39,7 +39,9 @@
 
         display:none;
     }
-
+    a:visited{
+        color:inherit;
+    }
     .subheading{
         font-size:18pt;
         background-color:transparent;
@@ -118,10 +120,12 @@
     }
 }
 .footer{
-    background-color: #ccc;
+    background-color: #e5e0db;
     margin-top: 10px;
     padding-top:1em;
+    padding-left:3em;
     padding-bottom:1em;
+    letter-spacing: 0.1em;
     font-weight:bold;
     font-family:'Source Sans Pro', sans-serif;
 }
