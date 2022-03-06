@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Free Travel</title>
+	<title>About Us</title>
 	<link rel="stylesheet" type="text/css" href="continent.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=League+Spartan&family=Poppins&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">
 		@media (min-width: 700px){
@@ -10,19 +16,12 @@
 				margin: 3em;
 				display: grid;
 				grid-template-columns: 1fr 1fr 1fr;
-				grid-auto-rows: minmax(400px,auto);
+				grid-template-rows: 700px 410px auto 450px;
 				grid-gap: 0.8em;
 			}
 
 			.box1{
-				margin-bottom: 40px;
-				display: flex;
-				height:700px;
-				grid-column: 1/4;
-				justify-content: center;
-				align-items: center;
 				background-image: url(about_us.jpg);
-				background-size:cover;
 			}
 
 			.box1 h1 {
@@ -35,24 +34,66 @@
 				grid-column: 1/4;
 				line-height: 2em;
 				font-size: 20px;
-			}
-
-			.centered {
-				position: absolute;
-				top: 50%;
-				right: 50%;
-				font-size: 90px;
-				letter-spacing: 0.1em;
+				margin-top: 50px;
 			}
 
 			h2 {
 				text-align: center;
+				font-size: 36px;
+				font-family: 'Poppins', sans-serif;			
 			}
 	
 			p {
 				padding: 1em 8em;
+				font-size: 23px;
+				font-family: 'League Spartan', sans-serif;
+			}
+
+			.box3{
+				grid-column: 1/2;
+				text-align: center;
+				margin-left: 15px;
+			}
+
+			.box3,.box4,.box5 {
+				font-family: 'Source Sans Pro', sans-serif;
+				background-color: white;
+			}
+
+			.box4 {
+				text-align: center;
+			}
+			.box5{
+				grid-column: 3/4;
+				text-align: center;
+				margin-right: 15px;
+			}
+
+			img {
+				border-radius: 50%;
+				width: 200px;
+				justify-content: center;
+				margin-top: 30px;
+				margin-bottom: -50px;
+				filter: drop-shadow(8px 5px 0.35rem lightslategray);			}
+
+			h4 {
+				text-align: center;
+				font-size: 20px;
+				
+			}
+			.profileText {
+				padding: 50px;
+				text-align:justify;
+				line-height: 1.5em;
+			}
+
+			.box7 {
+				grid-column: 1/4;
+				background-color: white;
 			}
 		}
+
 
 		@media (max-width: 700px){
 			.container{
@@ -72,6 +113,7 @@
 			.box1{
 				height: 700px;
 			}
+			
 		}
 
 		.footer{
@@ -109,10 +151,44 @@
     	<div class="box2">
 		<h2>Who are we?</h2>
 		<p>
-			For 16 years, we at outThere are proud of our excellent customer service and individually-tailored trip recommendations. Each consultant on our team has traveled to at least 10 different regions of the world and are here to offer valuable advice on your next holiday getaway. During your initial meeting with one of our consultants, we will take note of all your travel preferences and start planning your trip right away. The more we do, the less burden on your side. 
-		</p>
+			For 16 years, we at <em>outThere</em> are proud of our excellent customer service and individually-tailored trip recommendations. Each consultant on our team has traveled to at least 10 different regions of the world and are here to offer valuable advice on your next holiday getaway. During your initial meeting with one of our consultants, we will take note of all your travel preferences and start planning your trip right away. The more we do, the less burden on your side. 
+		</p> <br />
+		<center><hr /></center> 
 		</div>
-    	<!-- <div class="box6">Box6</div> -->
+
+		<div class="box7">
+			<h2>Meet Our Consultants:</h2>
+		</div>
+
+    	<div class="box3">
+			<div>
+				<img src="Joan.jpg" alt="Joan">
+			</div> <br /> 
+			<div class="profileText">
+				<h4>Joan Allison</h4> <br>
+				Travel has been my passion since I was twenty. I will never forget wandering in Boston and capturing all of the rich experiences the city has to offer. I want to share my expertise and experience so that my clients also get these unforgettable experiences. 
+			</div>
+		</div>
+
+		<div class="box4">
+			<div>
+				<img src="Leland.jpg" alt="Leland">
+			</div> <br />
+			<div class="profileText">
+				<h4>Leland Norton</h4> <br>
+				I’ve been in the travel planning industry for over 30 years. Trends come and go, but what I know for sure is that <em>outThere</em> has the expertise to plan incredible experiences for our clients. We are here, because we want you to have a memorable trip!
+			</div>
+		</div>
+
+		<div class="box5">
+			<div>
+				<img src="Catherine.jpg" alt="Catherine">
+			</div> <br /> 
+			<div class="profileText">
+				<h4>Catherine Wang</h4> <br>
+				I started working in the travel industry 15 years ago because I wanted to spread the love of traveling. My favorite destinations are Lucerne and Tokyo. I’m committed to delivering an incredible experience for all of my clients, and I’m looking forward to working with you! 
+			</div>
+		</div>
 	</div>
 	<div class="footer">footer</div>
 
