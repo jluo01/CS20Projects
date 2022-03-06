@@ -68,6 +68,10 @@
     font-family:'Source Sans Pro', sans-serif;
 }
 
+a:visited{
+    color:inherit;
+}
+
 @media (min-width: 700px){
     
     h1{
