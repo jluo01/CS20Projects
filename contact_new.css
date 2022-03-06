@@ -1,0 +1,273 @@
+.heading{
+    font-size: 30pt;
+    font-family: 'Poppins', sans-serif;
+}
+.text{
+    font-size:18pt;
+    font-family: 'League Spartan', sans-serif;
+    height:100%;
+}
+
+.showcase {
+    height: 400px;
+    background-color: grey;
+    color: white;
+    position: relative;
+}
+
+.card{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    margin:0;
+}
+
+.showcase-form .form-control {
+    margin: 30px 0;
+}
+.showcase-form input[type="text"] {
+    border: 0;
+    border-bottom: 1px solid #b4becd;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.showcase-form {
+    padding: 25px 30px;
+}
+
+.showcase-form input:focus {
+    outline: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    cursor: pointer;
+    background: grey;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    transform: scale(0.98)
+}
+
+@media (min-width: 700px){
+    
+    h1{
+        font-size:120px;
+        color:white;
+        letter-spacing:0.1em;
+        font-family: 'Poppins', sans-serif;
+    }
+
+}
+
+@media (max-width: 700px){
+    .container{
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: minmax(400px,auto);
+        grid-gap: 0.5em;
+    }
+
+    .box1{
+        height: 700px;
+    }
+}
+    .footer{
+        background-color: #ccc;
+        margin-top: 10px;
+    }
+
+
+/* JYL Styles Above*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+   list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+hr{
+    width: 60%;
+    margin-bottom:-50px;
+}
+
+.navbar{
+    z-index: 30;
+    width: 100%;
+    height:70px;
+    display:flex;		
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    background-color: white;
+}
+
+.logo{
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    margin-left: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-image:url('logo.png') ;
+    background-size:cover;
+    border:none;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+
+.navbar-text a{
+    font-size:18px;
+    margin:0 25px;
+    padding:0 20px;
+    overflow: hidden;
+}
+.navbar-text a:hover{
+    border-bottom: 1px solid black;
+}
+
+.hamburger{
+    margin-right: 20px;
+    display: none;
+}
+.bar{
+    border: 1px black solid;
+    width: 22px;
+    height: 2px;
+    margin-top: 5px;
+}
+
+@media (min-width: 900px){	
+    /* .showcase{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows:minmax(400px,auto)
+    }	
+    .showcase div{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .showcase i{
+        margin-top: 20px;
+    }
+
+    .showcase p{
+        margin-top:20px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 25px;
+    }
+
+    .navbar-text ul{
+        display:flex;
+        margin-left: 80px;		
+    } */
+}
+
+@media (max-width: 900px){
+    /* .showcase{
+        display:grid;
+        grid-template-columns: 2fr;
+        grid-auto-rows:minmax(200px,auto)
+    }	
+    .showcase div{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .showcase i{
+        margin-top: 20px;
+    }
+    .showcase p{
+        margin-top:20px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 25px;
+    } */
+    .logo{
+        margin-left:168%;
+    }
+
+    .navbar{
+        z-index: 20;
+    }
+
+    .navbar-text.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top:70px;
+        height:200px;
+        transform:scale(1);
+        transition: all 0.2s ease;
+    }
+
+    .navbar-text{
+        width: 100%;
+        background-color: rgba(78, 71, 71, 0.5);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top:4.35em;
+        transform:scale(0);
+        height:0px;
+    }
+    .navbar-text li{
+        margin-top:18px;
+        margin-bottom: 18px;
+    }
+
+    .navbar-text a{
+        font-size: 20px;
+    }
+    .navbar-text a:hover{
+        border-bottom: 1px white solid;
+    }
+
+    .navbar-text li a{
+        color:white;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger:hover{
+        cursor: pointer;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+}
