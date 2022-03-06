@@ -41,7 +41,7 @@ hr{
     margin-left: 25px;
     margin-top: 5px;
     margin-bottom: 5px;
-    background-image:url('logo.png') ;
+    background-image:url('../logo.png') ;
     background-size:cover;
     border:none;
 }
@@ -272,6 +272,7 @@ hr{
 
     .navbar-text ul{
         font-family: "Source Sana Pro",sans-serif;
+        font-weight:bold;
         display:flex;
         margin-left: 80px;		
     }
