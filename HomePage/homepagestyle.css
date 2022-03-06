@@ -94,7 +94,7 @@ hr{
 
 .box1{
     margin-top:70px;
-    background-image: url('HomePage/homepage.JPG');
+    background-image: url('homepage.JPG');
     background-size: cover;
     display:flex;
     flex-direction: column;
