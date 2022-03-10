@@ -11,8 +11,6 @@
         font-size:40pt;
         background-color:transparent;
         font-family: 'Poppins', sans-serif;
-        /*border:solid blue 2px;*/
-        /* comment */
     }
 
     .locationHeading:hover{
@@ -94,7 +92,7 @@
         background-size:cover;
         background-position-y: center;
     }
-    /* #e5e0db; */
+
     .box3,.box4,.box7 {
         color: white;
         background-color: rgba(66, 109, 141, 0.5);
