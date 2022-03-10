@@ -22,6 +22,7 @@
         transition:0.5s all ease;
         background-color:transparent;
         transform:translateY(-50px);
+        cursor:pointer;
     }
 
     .locationHeading:hover + .supportText{
@@ -93,8 +94,10 @@
         background-size:cover;
         background-position-y: center;
     }
+    /* #e5e0db; */
     .box3,.box4,.box7 {
-        background-color:#e5e0db;
+        color: white;
+        background-color: rgba(66, 109, 141, 0.5);
         position:relative;
     }
 
@@ -119,14 +122,16 @@
         height: 700px;
     }
 }
+/* <!--#e5e0db --> */
 .footer{
-    background-color: #e5e0db;
+    background-color: rgba(70, 112, 146, 0.5);
     margin-top: 10px;
     padding-top:1em;
     padding-left:3em;
     padding-bottom:1em;
     letter-spacing: 0.1em;
     font-weight:bold;
+    color:white;
     font-family:'Source Sans Pro', sans-serif;
 }
 
