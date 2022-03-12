@@ -8,14 +8,12 @@
 		.box1{
 			background-image: url(servicesbanner.jpg); 
 		}
-
 		.box2{
 			background-image: url(hotel.jpg); 
 		}
 		.box5{
 			background-image: url(car.jpg); 
 		}
-
 		.box6{
 			background-image: url(flight.jpg); 
 		}
@@ -23,6 +21,13 @@
     		position: absolute;
 			width:80%;
     		left: 10%;
+		}
+		.box8 {
+			display: flex;
+			justify-content: center;
+			text-align:center;
+			position:relative;
+			margin-top: 70px;
 		}
 		.heading{
 			font-size: 40pt;
@@ -121,24 +126,16 @@
 
 		@media (min-width: 900px){
 			.box8 {
-				display: flex;
-				justify-content: center;
-				text-align:center;
 				height:700px;
 				grid-column:1/4;
-				position:relative;
-				margin-top: 70px;
+
 			}
 		}
 
 		@media (max-width: 900px){
 			.box8 {
-				display: flex;
-				justify-content: center;
-				text-align:center;
 				height:800px;
-				position:relative;
-				margin-top: 70px;
+
 			}
 		}
 	</style>
