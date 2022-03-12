@@ -93,6 +93,7 @@ hr{
         font-size:40pt;
         background-color:transparent;
         font-family: 'Poppins', sans-serif;
+        line-height: 1em;
     }
 
     .locationHeading:hover{
@@ -111,19 +112,20 @@ hr{
 
     .supportText{
         font-size:18pt;
-        padding-top:6em;
+        padding-top:7em;
         line-height: 1.3em;
         padding-left:10%;
         padding-right:10%;
         font-family: 'League Spartan', sans-serif;
         height:100%;
-
         display:none;
     }
     a:visited{
         color:inherit;
     }
     .subheading{
+        padding-top:1em;
+        line-height: 1em;
         font-size:18pt;
         background-color:transparent;
         font-family: 'Poppins', sans-serif;
