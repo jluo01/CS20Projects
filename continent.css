@@ -216,7 +216,6 @@ hr{
 @media (max-width: 900px){
     .hero {
         width:100%;
-        border:red 4px solid;
     }
     .locationHeading {
         z-index: 20;
@@ -260,7 +259,6 @@ hr{
         line-height:1em;
         text-align:center;
         font-family: 'Poppins', sans-serif;
-        border: black 2px solid;
     }
     h2{
         font-size:24pt;
@@ -269,7 +267,6 @@ hr{
         letter-spacing:0.1em;
         text-align:center;
         font-family: 'Poppins', sans-serif;
-        border: black 2px solid;
     }
     .box1{
         height: 700px;
