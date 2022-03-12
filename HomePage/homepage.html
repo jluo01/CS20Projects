@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>outThere</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Free Travel</title>
 	<link rel="stylesheet" type="text/css" href="homepagestyle.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
 	integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-	<style>
-		.login_btn {
-			margin-left: 45%;
-			border: 10px white solid;
-		}
-	* {
-		font-family:'Source Sans Pro', sans-serif;
-	}
-	</style>
+    
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+			$("#btn").click(function(){
+				window.open("https://jluo01.github.io/CS20Projects/slogin.html","_self")
+			})
+		})
+	</script>
 </head>
 <body>
 	<div class="navbar">
@@ -42,18 +40,13 @@
 	<div class = "container">
 		<div class="box1">
 			<h1>outThere</h1>
-			<h2>Adventures await <em>outThere</em></h2>
-				<a href="https://jluo01.github.io/CS20Projects/HomePage/login.html">
-					<input type="submit" class="login" value="Login">
-
-		
-
+			<p>Adventures await <em>outThere</em></p>
+			<input type="button" class="login" value="Login" id="btn">
 			
 		</div>
 		<div class="box box2">
-			<center><h1 class="profiletitle">About outThere</h1></center>
-			<p>Since 2006, outThere’s goal has been to put you out there into the world. We believe that we are stronger when we learn from each other and experience global cultures. There is so much to experience, and we want to help you and your fellow travelers make memories. We have so much we want to share with you, and we’re here to bring our experience to help connect you with incredible travel experiences. 
-				<center><hr></center></p>
+			<center><h1 class="profiletitle">About Free Trip</h1></center>
+			<p class="profile">Since 2006, outThere’s goal has been to put you out there into the world. We believe that we are stronger when we learn from each other and experience global cultures. There is so much to experience, and we want to help you and your fellow travelers make memories. We have so much we want to share with you, and we’re here to bring our experience to help connect you with incredible travel experiences. <center><hr></center></p>
 			<div class="showcase">
 				<div>
 					<i class="fa fa-circle-user fa-4x"></i>
@@ -83,15 +76,15 @@
 			<center><hr><h1 class="trips">Trips</h1></center>
 		</div>
     	<div class="boxes box3">
-			<a href="https://www.google.com/drive/" class="title asia">Asia</a>
+			<a href="https://jluo01.github.io/CS20Projects/Asia/Asia.html " class="title asia">Asia</a>
 			<p class="explore">Explore Trips in Asia</p>
 		</div>
     	<div class="boxes box4">
-			<a href="https://www.google.com/drive/" class="title europe">Europe</a>
+			<a href="https://jluo01.github.io/CS20Projects/Europe/Europe.html" class="title europe">Europe</a>
 			<p class="explore">Explore Trips in Europe</p>
 		</div>
     	<div class="boxes box5">
-			<a href="https://www.google.com/drive/" class="title america">America</a>
+			<a href="https://jluo01.github.io/CS20Projects/Americas/Americas.html " class="title america">America</a>
 			<p class="explore">Explore Trips in America</p>
 		</div>
     	<div class="box6">
@@ -101,10 +94,12 @@
 		</div>
 		<div class="box7">
 			<h1 class="contactus"> Want Your Customized Trip?</h1>
-			<a href="">Contact&nbspUs</a>
+			<a href="https://jluo01.github.io/CS20Projects/Contact/ContactUs.html">Contact&nbspUs</a>
 		</div>
 		
 	</div>
+	<div class="footer">outThere Travel Limited, Copyright 2022</div>
+
 	<script type="text/javascript">
 		const hamburger = document.querySelector(".hamburger");
 		const navMenu = document.querySelector(".navbar-text");
@@ -119,11 +114,7 @@
         }
 
 	</script>
-	<div class="footer">
-        <div>
-            outThere Travel Limited, Copyright 2022
-        </div>
-    </div>
+
 
 
 </body>
