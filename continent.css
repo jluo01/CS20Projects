@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan&family=Poppins&family=Source+Sans+Pro:wght@300&display=swap');
+a:visited{
+    color:inherit;
+}
 @media (min-width: 900px){
     .locationHeading {
         z-index: 20;
@@ -38,9 +41,7 @@
 
         display:none;
     }
-    a:visited{
-        color:inherit;
-    }
+
     .subheading{
         font-size:18pt;
         background-color:transparent;
