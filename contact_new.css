@@ -157,6 +157,12 @@ hr{
 }
 
 @media (max-width: 900px){
+    h1,h2{
+        font-size:120px;
+        color:white;
+        letter-spacing:0.1em;
+        font-family: 'Poppins', sans-serif;
+    }
     .logo{
         margin-left:50%;
     }
