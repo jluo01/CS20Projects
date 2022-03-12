@@ -143,6 +143,8 @@ hr{
 
 @media (min-width: 900px){	
     .navbar-text ul{	
+        display:flex;
+        margin-left: 80px;	
         font-weight:bold;
         font-family:'Source Sans Pro', sans-serif;
     }
@@ -188,6 +190,7 @@ hr{
     .navbar-text li{
         margin-top:18px;
         margin-bottom: 18px;
+        font-family:'Source Sans Pro', sans-serif;
     }
 
     .navbar-text a{
