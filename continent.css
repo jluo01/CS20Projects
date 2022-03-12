@@ -270,8 +270,6 @@ hr{
     }
     .box1{
         height: 700px;
-        background-size:cover;
-        background-position:center;
     }
     .box2,.box5,.box6{
         background-size:cover;
