@@ -98,7 +98,7 @@ hr{
 
     .locationHeading:hover{
         padding-bottom:50%;
-        padding-top:15%;
+        padding-top:1.5em;
         height:500px;
         transition:0.5s all ease;
         background-color:transparent;
@@ -112,7 +112,7 @@ hr{
 
     .supportText{
         font-size:18pt;
-        padding-top:7em;
+        padding-top:6em;
         line-height: 1.3em;
         padding-left:10%;
         padding-right:10%;
