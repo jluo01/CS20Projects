@@ -72,22 +72,6 @@
         color:inherit;
     }
 
-@media (max-width: 700px){
-    .container{
-        display: grid;
-        grid-auto-columns: 1fr;
-        grid-auto-rows: minmax(400px,auto);
-        grid-gap: 0.5em;
-    }
-
-    .box1{
-        height: 700px;
-    }
-}
-
-
-
-/* JYL Styles Above*/
 *{
     box-sizing: border-box;
     padding: 0;
@@ -158,9 +142,9 @@ hr{
 }
 
 @media (min-width: 900px){	
-    .navbar-text ul{
+    .navbar-text ul{	
         display:flex;
-        margin-left: 80px;		
+        margin-left: 80px;	
         font-weight:bold;
         font-family:'Source Sans Pro', sans-serif;
     }
@@ -170,58 +154,11 @@ hr{
         letter-spacing:0.1em;
         font-family: 'Poppins', sans-serif;
     }
-    /* .showcase{
-        display:grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-auto-rows:minmax(400px,auto)
-    }	
-    .showcase div{
-        display:flex;
-        flex-direction:column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .showcase i{
-        margin-top: 20px;
-    }
-
-    .showcase p{
-        margin-top:20px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-size: 25px;
-    }
-
-    .navbar-text ul{
-        display:flex;
-        margin-left: 80px;		
-    } */
 }
 
 @media (max-width: 900px){
-    /* .showcase{
-        display:grid;
-        grid-template-columns: 2fr;
-        grid-auto-rows:minmax(200px,auto)
-    }	
-    .showcase div{
-        display:flex;
-        flex-direction:column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    .showcase i{
-        margin-top: 20px;
-    }
-    .showcase p{
-        margin-top:20px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-size: 25px;
-    } */
     .logo{
-        margin-left:168%;
+        margin-left:50%;
     }
 
     .navbar{
@@ -253,6 +190,7 @@ hr{
     .navbar-text li{
         margin-top:18px;
         margin-bottom: 18px;
+        font-family:'Source Sans Pro', sans-serif;
     }
 
     .navbar-text a{
