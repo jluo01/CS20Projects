@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Succeed</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script>
+        $(document).ready(function(){
+            
+            $("#icon").show().delay(2000).fadeOut(500)
+            $("#hello").hide().delay(3000)
+            $("#hello").fadeIn(2000)
+            $("#hello").fadeOut(1000)
+            $("#outthere").hide().delay(6000)
+            $("#outthere").fadeIn(2000)
+            $("#outthere").fadeOut(1000) 
+            redirect_Page()
+
+            function redirect_Page () {
+                    tID = setTimeout(function () {
+                    window.location.href = "https://jluo01.github.io/CS20Projects/HomePage/homepage.html";
+                    window.clearTimeout(tID);		// clear time out.
+                }, 10000);}
+            
+
+        })
+    </script>
+    <style>
+        .text{
+            height:600px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+        }
+
+    </style>
+
+</head>
+<body>
+     <div class="text">
+         <p id = "hello"> Hello!</p>
+         <p id = "outthere"> Let's Explore the World Outthere!</p>
+         <i id="icon" class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+     </div>
+     
+
+</body>
+</html>
