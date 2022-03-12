@@ -72,17 +72,6 @@
         color:inherit;
     }
 
-@media (min-width: 700px){
-    
-    h1{
-        font-size:120px;
-        color:white;
-        letter-spacing:0.1em;
-        font-family: 'Poppins', sans-serif;
-    }
-
-}
-
 @media (max-width: 700px){
     .container{
         display: grid;
@@ -174,6 +163,12 @@ hr{
         margin-left: 80px;		
         font-weight:bold;
         font-family:'Source Sans Pro', sans-serif;
+    }
+    h1,h2{
+        font-size:120px;
+        color:white;
+        letter-spacing:0.1em;
+        font-family: 'Poppins', sans-serif;
     }
     /* .showcase{
         display:grid;
