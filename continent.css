@@ -214,6 +214,10 @@ hr{
 }
 
 @media (max-width: 900px){
+    .hero {
+        width:100%;
+        border:red 4px solid;
+    }
     .locationHeading {
         z-index: 20;
         position:absolute;
@@ -248,9 +252,19 @@ hr{
         grid-auto-rows: minmax(400px,auto);
         grid-gap: 0.5em;
     }
-    h1,h2{
-        font-size:72px;
+    h1{
+        font-size:72pt;
         padding-top:2em;
+        color:white;
+        letter-spacing:0.1em;
+        line-height:1em;
+        text-align:center;
+        font-family: 'Poppins', sans-serif;
+        border: black 2px solid;
+    }
+    h2{
+        font-size:24pt;
+        padding-top:0.5em;
         color:white;
         letter-spacing:0.1em;
         text-align:center;
