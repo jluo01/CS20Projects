@@ -248,7 +248,15 @@ hr{
         grid-auto-rows: minmax(400px,auto);
         grid-gap: 0.5em;
     }
-    
+    h1,h2{
+        font-size:72px;
+        padding-top:2em;
+        color:white;
+        letter-spacing:0.1em;
+        text-align:center;
+        font-family: 'Poppins', sans-serif;
+        border: black 2px solid;
+    }
     .box1{
         height: 700px;
     }
