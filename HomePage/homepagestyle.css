@@ -1,10 +1,12 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan&family=Poppins&family=Source+Sans+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&family=Poppins&family=Source+Sans+Pro:wght@300;400&display=swap');
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+h1{
+    font-family: "Poppins",sans-serif;
 }
 
 ul{
@@ -41,7 +43,7 @@ hr{
     margin-left: 25px;
     margin-top: 5px;
     margin-bottom: 5px;
-    background-image:url('../logo.png') ;
+    background-image:url('logo.png') ;
     background-size:cover;
     border:none;
 }
@@ -107,13 +109,23 @@ hr{
 .box1 h1{
     margin-bottom: 100px;
     padding-bottom: 5px;
-    font-size:100px; 
+    font-size:110px; 
     
 }
 
 .box1 p{
     margin-top:-10px;
-    font-size: 20px;
+    font-size: 27px;
+}
+
+.profile{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 22px;
+    font-family: "Source Sans Pro",sans-serif;
+    word-spacing: 0.3em;
+    text-align: justify;
 }
 
 .boxes{
@@ -170,7 +182,7 @@ hr{
 
 
 .profiletitle{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "Poppins",sans-serif;
     font-size:40px;
     margin-top: 40px;
 }
@@ -195,6 +207,10 @@ hr{
     position: absolute;
     width: 95%;
     left: 28%;
+}
+
+.contactus{
+    font-family: "Source Sans Pro",sans-serif;
 }
 
 .box7{
@@ -226,7 +242,10 @@ hr{
     transition: all 0.4s ease;
 }
 
-
+.footer{
+    position:relative;
+    top:300px;
+}
 
 @media (min-width: 900px){	
     .showcase{
@@ -248,15 +267,15 @@ hr{
 
     .showcase p{
         margin-top:20px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-family: "Source Sans Pro",sans-serif;
         font-size: 25px;
     }
 
     .trips{
-        margin-top: 200px;
+        margin-top: 100px;
         margin-bottom:100px;
         font-size:40px;
-        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-family: "Poppins",sans-serif;
     }
 
     .container{
@@ -268,8 +287,7 @@ hr{
     }
 
     .navbar-text ul{
-        font-family:'Source Sans Pro', sans-serif;
-        font-weight:bold;
+        font-family: "Source Sana Pro",sans-serif;
         display:flex;
         margin-left: 80px;		
     }
@@ -309,7 +327,7 @@ hr{
         top:50px;
         right:1%;
         font-size: 40px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-family: "Poppins",sans-serif;
         
     }
     .title{
@@ -326,6 +344,7 @@ hr{
         position: absolute;
         top:55%;
     }
+
     
 }
 
@@ -347,14 +366,14 @@ hr{
     }
     .showcase p{
         margin-top:20px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-family: "Source Sans Pro",sans-serif;
         font-size: 25px;
     }
     .trips{
         margin-top: 100px;
         margin-bottom:100px;
         font-size:40px;
-        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-family: "Poppins",sans-serif;
     }
 
     .container{
@@ -457,7 +476,7 @@ hr{
     }
 
     .servicetitle{
-        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-family: "Poppins",sans-serif;
         font-size: 40px;
     }
 
@@ -509,21 +528,22 @@ hr{
     .contactus{
         margin-top: 50px;
         font-size: 50px;
+        
     }
 
 
     
 }
 
-.footer{
-    margin-top: 150px;
-    background-color: #c78e557a;
-    padding-top:1em;
-    padding-left:3em;
-    padding-bottom:1em;
+.footer {
+    background-color: rgba(116, 94, 94, 0.5);
+    margin-top: 10px;
+    padding-top: 1em;
+    padding-left: 3em;
+    padding-bottom: 1em;
     letter-spacing: 0.1em;
-    font-weight:bold;
-    font-family:'Source Sans Pro', sans-serif;
-}
-
-
+    font-weight: bold;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+ }
+ 
