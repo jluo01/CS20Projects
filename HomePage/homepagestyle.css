@@ -1,6 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&family=Poppins&family=Source+Sans+Pro:wght@300&display=swap');
 *{
     box-sizing: border-box;
     padding: 0;
@@ -226,16 +226,7 @@ hr{
     transition: all 0.4s ease;
 }
 
-.footer{
-    background-color: #e5e0db;
-    margin-top: 10px;
-    padding-top:1em;
-    padding-left:3em;
-    padding-bottom:1em;
-    letter-spacing: 0.1em;
-    font-weight:bold;
-    font-family:'Source Sans Pro', sans-serif;
-}
+
 
 @media (min-width: 900px){	
     .showcase{
@@ -277,7 +268,7 @@ hr{
     }
 
     .navbar-text ul{
-        font-family: "Source Sana Pro",sans-serif;
+        font-family:'Source Sans Pro', sans-serif;
         font-weight:bold;
         display:flex;
         margin-left: 80px;		
@@ -335,7 +326,6 @@ hr{
         position: absolute;
         top:55%;
     }
-
     
 }
 
@@ -526,6 +516,14 @@ hr{
 }
 
 .footer{
-    background-color: #ccc;
-    margin-top: 10px;
+    margin-top: 150px;
+    background-color: #c78e557a;
+    padding-top:1em;
+    padding-left:3em;
+    padding-bottom:1em;
+    letter-spacing: 0.1em;
+    font-weight:bold;
+    font-family:'Source Sans Pro', sans-serif;
 }
+
+
