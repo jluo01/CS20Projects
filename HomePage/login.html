@@ -248,15 +248,19 @@
 			let x = document.getElementById("Username");
 			let y = document.getElementById("Password");
 			let check = []
+			let error = false
 			check.push(x,y)
 			for (let i = 0; i < check.length; i++){
 				if (check[i].value == ""){
 					alert(check[i].id + " cannot be empty.")
+					error = true
 					break;
 				}
 			}
-
-			window.open("https://jluo01.github.io/CS20Projects/slogin.html","_self")
+            if(!error){
+				window.open("https://jluo01.github.io/CS20Projects/slogin.html","_self")
+			}
+			
 		}	
 	</script>
 	
