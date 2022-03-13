@@ -13,6 +13,7 @@
     <style>
         .box1{
             background-image:url(Boston.jpg);
+            background-size:cover;
         }
         .box3,.box4,.box7 {
             color: white;
@@ -21,6 +22,66 @@
         }
         .footer {
             background-color: rgba(126, 119, 68, 0.5);
+        }
+        .is-mobile{
+            display:none;
+        }
+        @media(min-width:900px){
+            .box4{
+                background-color:rgba(94, 90, 53, 0.5);
+                color:white;
+            }
+        .box5{
+                background-image:url(Boston2.jpg);
+                background-position:center;
+                background-size:cover;
+            }
+        }
+        
+        @media (max-width:900px){
+            .box4{
+                background-image:url(Boston2.jpg);
+                background-position:center;
+                background-size:cover;
+            }
+            .box5{
+                background-color:rgba(94, 90, 53, 0.5);
+                color:white;
+            }
+            .locationHeading {
+                position:absolute;
+                padding-top:.7em;
+                width:100%;
+                text-align: center;
+                font-size:40pt;
+                background-color:transparent;
+                display:block;
+                font-family: 'Poppins', sans-serif;
+            }
+            .supportText{
+                font-size:18pt;
+                padding-top:7em;
+                line-height: 1.3em;
+                width:100%;
+                text-align:justify;
+                padding-left:10%;
+                padding-right:10%;
+                font-family: 'League Spartan', sans-serif;
+                display:block;
+            }
+            .subheading{
+                font-size:18pt;
+                background-color:transparent;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .is-mobile{
+                display:block;
+            }
+            .no-mobile{
+                display:none;
+            }
+
         }
     </style>
 </head>
@@ -51,8 +112,8 @@
                 <h1>    
                     United States
                 </h1>
-                <h2>
-                    Some Text
+                <h2 style = "font-size:24pt;">
+                    Amazing from Coast to Coast.
                 </h2>
             </div>
         </div>
@@ -74,18 +135,35 @@
             
         </div>
     	<div class="box4" style = "position:relative">
-            <div class = "locationHeading">
-                Boston
-                <div class = subheading>Classic, Contemporary, Advanced.</div>
+            <div class = "no-mobile">
+                <div class = "locationHeading">
+                    Boston
+                    <div class = subheading>Classic, Contemporary, Advanced.</div>
+                </div>
+                <div class = "supportText" style = "padding-top:8em">
+                    Boston is one of America's oldest cities. You can enjoy the rich 
+                    history the city has to offer, and you can also enjoy the city's 
+                    more contemporary offerings. It's no wonder that Boston is high 
+                    on the list for many travellers.
+                </div> 
             </div>
-            <div class = "supportText" style = "padding-top:8em">
-                Boston is one of America's oldest cities. You can enjoy the rich 
-                history the city has to offer, and you can also enjoy the city's 
-                more contemporary offerings. It's no wonder that Boston is high 
-                on the list for many travellers.
-            </div> 
+            
         </div>
-    	<div class="box5" style = "background-image:url(Boston2.jpg)"></div>
+    	<div class="box5">
+            <div class = "is-mobile">
+                <div class = "locationHeading">
+                    Boston
+                    <div class = subheading>Classic, Contemporary, Advanced.</div>
+                </div>
+                <div class = "supportText" style = "padding-top:8em">
+                    Boston is one of America's oldest cities. You can enjoy the rich 
+                    history the city has to offer, and you can also enjoy the city's 
+                    more contemporary offerings. It's no wonder that Boston is high 
+                    on the list for many travellers.
+                </div> 
+            
+            </div>
+        </div>
     	<div class="box6" style = "background-image:url(NYC.jpg)"></div>
     	<div class="box7" style = "position:relative">
             <div class = "locationHeading">
