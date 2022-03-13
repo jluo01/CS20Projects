@@ -9,7 +9,85 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
-	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="seo, travel agency, travel, travelling, Europe, 
+	Americas, Asia, Tokyo, Shanghai, Bangkok, Zurich, Lucerne, Murren, San Francisco,
+	Boston, New York, trips"> 
+
+	<style>
+        .box1{
+            background-image:url(Zurich.jpg);
+            background-size:cover;
+        }
+        .box3,.box4,.box7 {
+            color: white;
+            background-color: rgba(66, 109, 141, 0.5);
+            position:relative;
+        }
+        .footer {
+            background-color: rgba(66, 109, 141, 0.5);
+        }
+        .is-mobile{
+            display:none;
+        }
+        @media(min-width:900px){
+            .box4{
+                background-color:rgba(66, 109, 141, 0.5);
+                color:white;
+            }
+            .box5{
+                    background-image:url(Zurich2.jpg);
+                    background-position:center;
+                    background-size:cover;
+                }
+        }
+        
+        @media (max-width:900px){
+            .box4{
+                background-image:url(Zurich2.jpg);
+                background-position:center;
+                background-size:cover;
+            }
+            .box5{
+                background-color:rgba(66, 109, 141, 0.5);
+                color:white;
+            }
+            .locationHeading {
+                position:absolute;
+                padding-top:.7em;
+                width:100%;
+                text-align: center;
+                font-size:40pt;
+                background-color:transparent;
+                display:block;
+                font-family: 'Poppins', sans-serif;
+            }
+            .supportText{
+                font-size:18pt;
+                padding-top:7em;
+                line-height: 1.3em;
+                width:100%;
+                text-align:justify;
+                padding-left:10%;
+                padding-right:10%;
+                font-family: 'League Spartan', sans-serif;
+                display:block;
+            }
+            .subheading{
+                font-size:18pt;
+                background-color:transparent;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .is-mobile{
+                display:block;
+            }
+            .no-mobile{
+                display:none;
+            }
+
+        }
+    </style>
 </head>
 <body>
     <div class="navbar">
@@ -32,12 +110,12 @@
 	    </div>
 	</div>
 	<div class = "container">
-		<div class="box1" style = "background-image: url(Zurich.jpg)"> 
+		<div class="box1"> 
             <div id = "hero" >
                 <h1>
                     Europe
                 </h1>
-                <h2 style = "font-size:24pt; background-color:rgba(128,128,128,0.8)">
+                <h2 style = "font-size:24pt">
                     Unbelievable variety.
                 </h2>
             </div>
@@ -52,7 +130,7 @@
                 Murren: 
                 <div class = "subheading">Natural, Majestic, Free.</div>
             </div>
-            <div class = "supportText">
+            <div class = "supportText" style = "padding-top:7em">
                 After a short cable car ride, a charming village in the Swiss alps 
                 awaits you. Whether enjoying a hike in alps, basking in the breathtaking
                 scenery, or grabbing a bite in the local restaurants, there's lots to do 
@@ -61,26 +139,40 @@
             
         </div>
     	<div class="box4"style = "position:relative">
-            <div class = "locationHeading">
-                Zurich: 
-                <div class = subheading>Active, welcoming, luxurious.</div>
-            </div>
-            <div class = "supportText">
-                One of the best kept treasures in Europe. Zurich has world class music
-                shopping, and people. Swim in the unbelievably clear Lake Zurich, 
-                drink pristine water from any of the ornate public fountains, and 
-                consume all of the sights and history around you. 
-            </div>
-            
+            <div class = "no-mobile">
+                <div class = "locationHeading">
+                    Zurich: 
+                    <div class = subheading>Active, welcoming, luxurious.</div>
+                </div>
+                <div class = "supportText"style = "padding-top:7.5em">
+                    One of the best kept treasures in Europe. Zurich has world class music
+                    shopping, and people. Swim in the unbelievably clear Lake Zurich, 
+                    drink pristine water from any of the ornate public fountains, and 
+                    consume all of the sights and history around you. 
+                </div>
+            </div>            
         </div>
-    	<div class="box5" style = "background-image: url(Zurich2.jpg)"></div>
+    	<div class="box5">
+            <div class = "is-mobile">
+                <div class = "locationHeading">
+                    Zurich: 
+                    <div class = subheading>Active, welcoming, luxurious.</div>
+                </div>
+                <div class = "supportText"style = "padding-top:7.5em">
+                    One of the best kept treasures in Europe. Zurich has world class music
+                    shopping, and people. Swim in the unbelievably clear Lake Zurich, 
+                    drink pristine water from any of the ornate public fountains, and 
+                    consume all of the sights and history around you. 
+                </div>
+            </div>      
+        </div>
     	<div class="box6" style = "background-image:url(Lucerne.jpg)"></div>
     	<div class="box7"style = "position:relative">
             <div class = "locationHeading">
                 Lucerne
                 <div class = "subheading">Historic, beautiful, idylic.</div>
             </div>
-            <div class = "supportText">
+            <div class = "supportText" style = "padding-top:7.5em">
                 Lucerne brings artists and music lovers from around the world to its
                 namesake music festival. Walk down the winding cobblestone roads, 
                 grab a gelato from a street vendor, and see what else this city has 
@@ -95,6 +187,20 @@
         </div>
     </div>
 	
-    
+    <script type="text/javascript">
+		const hamburger = document.querySelector(".hamburger");
+		const navMenu = document.querySelector(".navbar-text");
+		
+
+
+		hamburger.addEventListener("click", mobileMenu);
+
+		function mobileMenu() {
+   		hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+        }
+
+	</script>
+
 </body>
 </html>

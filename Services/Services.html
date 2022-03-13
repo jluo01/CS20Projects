@@ -3,6 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="seo, travel agency, travel, travelling, Europe, 
+	      Americas, Asia, Tokyo, Shanghai, Bangkok, Zurich, Lucerne, Murren, San Francisco,
+		  Boston, New York, trips"> 
 	<title>Services</title>
 	<style type="text/css">
 		.box1{
@@ -10,9 +13,6 @@
 		}
 		.box2{
 			background-image: url(hotel.jpg); 
-		}
-		.box5{
-			background-image: url(car.jpg); 
 		}
 		.box6{
 			background-image: url(flight.jpg); 
@@ -118,18 +118,29 @@
 		}
 
 		h1{
-				font-size:120px;
-        		color:white;
-        		letter-spacing:0.1em;
-        		font-family: 'Poppins', sans-serif;
-			}
-
+			font-size:120px;
+			color:white;
+			letter-spacing:0.1em;
+			font-family: 'Poppins', sans-serif;
+		}
+		.is-mobile{
+            display:none;
+        }
 		@media (min-width: 900px){
 			.box8 {
 				height:700px;
 				grid-column:1/4;
 
 			}
+			.box4{
+                background-color:rgba(94, 90, 53, 0.5);
+                color:white;
+            }
+       		.box5{
+                background-image:url(car.jpg);
+                background-position:center;
+                background-size:cover;
+            }
 		}
 
 		@media (max-width: 900px){
@@ -137,6 +148,48 @@
 				height:800px;
 
 			}
+			.box4{
+				background-image:url(car.jpg);
+                background-position:center;
+                background-size:cover;
+            }
+            .box5{
+				background-color: #57291488;
+				color:white;
+            }
+            .locationHeading {
+                position:absolute;
+                padding-top:.7em;
+                width:100%;
+                text-align: center;
+                font-size:40pt;
+                background-color:transparent;
+                display:block;
+                font-family: 'Poppins', sans-serif;
+            }
+            .supportText{
+                font-size:18pt;
+                padding-top:7em;
+                line-height: 1.3em;
+                width:100%;
+                text-align:justify;
+                padding-left:10%;
+                padding-right:10%;
+                font-family: 'League Spartan', sans-serif;
+                display:block;
+            }
+            .subheading{
+                font-size:18pt;
+                background-color:transparent;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .is-mobile{
+                display:block;
+            }
+            .no-mobile{
+                display:none;
+            }
 		}
 	</style>
 	<link rel="stylesheet" type="text/css" href="../continent.css">
@@ -211,15 +264,29 @@
 				room upgrades, late check-out, and more, based on your personal preference.
 			</div>
 		</div>
-    	<div class="box4" style="background-color: #57291488">
-			<div class="locationHeading" style="transform:translateY(-10px); color:white">Car Rentals</div>
-			<div class="supportText" style = "color:white; padding-top: 6em"">
-				Want to drive around the city and explore on your own? We provide car rental services at all our 
-				destinations.
-			</div>
-		</div>
-    	<div class="box5"></div>
-    	<div class="box6"></div>
+		<div class="box4" style = "position:relative">
+            <div class = "no-mobile">
+                <div class = "locationHeading" style="transform:translateY(-10px); color:white">
+                    Car Rentals
+                </div>
+                <div class = "supportText" style = "padding-top:8em; color:white; padding-top: 6em">
+					Want to drive around the city and explore on your own? We provide car rental services at all our 
+					destinations.
+                </div> 
+            </div>
+        </div>
+		<div class="box5" style = "position:relative">
+            <div class = "is-mobile">
+                <div class = "locationHeading" style="transform:translateY(-10px); color:white">
+                    Car Rentals
+                </div>
+                <div class = "supportText" style = "padding-top:8em; color:white; padding-top: 6em">
+					Want to drive around the city and explore on your own? We provide car rental services at all our 
+					destinations.
+                </div> 
+            </div>
+        </div>
+		<div class="box6"></div>
     	<div class="box7" style="background-color: #57291488">
 			<div class="locationHeading" style="transform:translateY(-10px); color:white">Flights</div>
 			<div class="supportText" style = "color:white; padding-top: 6em"">

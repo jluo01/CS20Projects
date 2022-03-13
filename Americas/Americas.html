@@ -6,9 +6,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan&family=Poppins&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="seo, travel agency, travel, travelling, Europe, 
+	Americas, Asia, Tokyo, Shanghai, Bangkok, Zurich, Lucerne, Murren, San Francisco,
+	Boston, New York, trips"> 
     <style>
         .box1{
             background-image:url(Boston.jpg);
+            background-size:cover;
         }
         .box3,.box4,.box7 {
             color: white;
@@ -17,6 +22,66 @@
         }
         .footer {
             background-color: rgba(126, 119, 68, 0.5);
+        }
+        .is-mobile{
+            display:none;
+        }
+        @media(min-width:900px){
+            .box4{
+                background-color:rgba(94, 90, 53, 0.5);
+                color:white;
+            }
+        .box5{
+                background-image:url(Boston2.jpg);
+                background-position:center;
+                background-size:cover;
+            }
+        }
+        
+        @media (max-width:900px){
+            .box4{
+                background-image:url(Boston2.jpg);
+                background-position:center;
+                background-size:cover;
+            }
+            .box5{
+                background-color:rgba(94, 90, 53, 0.5);
+                color:white;
+            }
+            .locationHeading {
+                position:absolute;
+                padding-top:.7em;
+                width:100%;
+                text-align: center;
+                font-size:40pt;
+                background-color:transparent;
+                display:block;
+                font-family: 'Poppins', sans-serif;
+            }
+            .supportText{
+                font-size:18pt;
+                padding-top:7em;
+                line-height: 1.3em;
+                width:100%;
+                text-align:justify;
+                padding-left:10%;
+                padding-right:10%;
+                font-family: 'League Spartan', sans-serif;
+                display:block;
+            }
+            .subheading{
+                font-size:18pt;
+                background-color:transparent;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .is-mobile{
+                display:block;
+            }
+            .no-mobile{
+                display:none;
+            }
+
         }
     </style>
 </head>
@@ -47,20 +112,20 @@
                 <h1>    
                     United States
                 </h1>
-                <h2>
-                    Some Text
+                <h2 style = "font-size:24pt;">
+                    Amazing from Coast to Coast.
                 </h2>
             </div>
         </div>
     	<div class="box2" style = "background-image:url(SanFrancisco.jpg)"></div>
     	<div class="box3">
-            <div class = "locationHeading">
-                San Francisco
+            <div class = "locationHeading" style = "word-break:break-all">
+                San <br>Francisco
                 <div class = "subheading">
                     Bohemian, Progressive, Wild.
                 </div>
             </div>
-            <div class ="supportText" style = "padding-top:7.2em">
+            <div class ="supportText" style = "padding-top:11em">
                 Known as the "City by the Bay", San Francisco 
                 attracts travellers from around the world. 
                 Whether it's driving down Lombard Street or 
@@ -70,25 +135,42 @@
             
         </div>
     	<div class="box4" style = "position:relative">
-            <div class = "locationHeading">
-                Boston
-                <div class = subheading>Classic, Contemporary, Advanced.</div>
+            <div class = "no-mobile">
+                <div class = "locationHeading">
+                    Boston
+                    <div class = subheading>Classic, Contemporary, Advanced.</div>
+                </div>
+                <div class = "supportText" style = "padding-top:8em">
+                    Boston is one of America's oldest cities. You can enjoy the rich 
+                    history the city has to offer, and you can also enjoy the city's 
+                    more contemporary offerings. It's no wonder that Boston is high 
+                    on the list for many travellers.
+                </div> 
             </div>
-            <div class = "supportText" style = "padding-top:6.2em">
-                Boston is one of America's oldest cities. You can enjoy the rich 
-                history the city has to offer, and you can also enjoy the city's 
-                more contemporary offerings. It's no wonder that Boston is high 
-                on the list for many travellers.
-            </div> 
+            
         </div>
-    	<div class="box5" style = "background-image:url(Boston2.jpg)"></div>
+    	<div class="box5">
+            <div class = "is-mobile">
+                <div class = "locationHeading">
+                    Boston
+                    <div class = subheading>Classic, Contemporary, Advanced.</div>
+                </div>
+                <div class = "supportText" style = "padding-top:8em">
+                    Boston is one of America's oldest cities. You can enjoy the rich 
+                    history the city has to offer, and you can also enjoy the city's 
+                    more contemporary offerings. It's no wonder that Boston is high 
+                    on the list for many travellers.
+                </div> 
+            
+            </div>
+        </div>
     	<div class="box6" style = "background-image:url(NYC.jpg)"></div>
     	<div class="box7" style = "position:relative">
             <div class = "locationHeading">
                 New York
                 <div class = subheading>Energy, Fame, Greatness. </div>
             </div>
-            <div class = "supportText" style = "padding-top:6em">
+            <div class = "supportText" style = "padding-top:9em">
                 A city that needs no introduction. New York City has everything: 
                 bustling nightlife, rich culture, incredible food, and towering 
                 skyscrapers. New York cannot be summed up in a paragraph - come 
@@ -102,7 +184,21 @@
             outThere Travel Limited, Copyright 2022
         </div>
     </div>
-	
+    <script type="text/javascript">
+		const hamburger = document.querySelector(".hamburger");
+		const navMenu = document.querySelector(".navbar-text");
+		
+
+
+		hamburger.addEventListener("click", mobileMenu);
+
+		function mobileMenu() {
+   		hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+        }
+
+	</script>
+
     
 </body>
 </html>
