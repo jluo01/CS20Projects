@@ -3,6 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="seo, travel agency, travel, travelling, Europe, 
+	Americas, Asia, Tokyo, Shanghai, Bangkok, Zurich, Lucerne, Murren, San Francisco,
+	Boston, New York, trips"> 
 	<title>Contact Us</title>
 	<style type="text/css">
 		@media (min-width: 900px){
@@ -66,20 +69,17 @@
 				grid-gap: 0.5em;
 			}
 			.box1{
-				/* text-align: center;
-				height:300px; */
+				text-align: center;
 				background-image: url(contactbanner.jpg); 
 				background-size:cover; 
 				width: 100%;
-				/* font-size: 50px; 
-				box-sizing: border-box;
-				padding: 20px; */
 				height:700px;
-				border: black 1px solid;
+				display:flex;
+				justify-content: center;
+				align-items:center;
 			}
             .box2{
                 background-color: #ccc;
-                grid-column: 1/4;
                 text-align: center;
 				padding-top: 10%;
 				line-height: 2;
@@ -88,7 +88,6 @@
 				box-shadow: 0 3px 10px rgba(0,0,0,0.2);
             }
             .box3{
-                grid-column: 1/4;
                 text-align: center;
             }
 
@@ -245,5 +244,20 @@
             outThere Travel Limited, Copyright 2022
         </div>
 	</div>
+
+	<script type="text/javascript">
+		const hamburger = document.querySelector(".hamburger");
+		const navMenu = document.querySelector(".navbar-text");
+		
+
+
+		hamburger.addEventListener("click", mobileMenu);
+
+		function mobileMenu() {
+   		hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+        }
+
+	</script>
 </body>
 </html>
