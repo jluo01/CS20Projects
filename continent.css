@@ -112,8 +112,8 @@ hr{
 
     .supportText{
         font-size:18pt;
-        padding-top:6em;
-        line-height: 1.3em;
+        padding-top:40%;
+        line-height: 1.2em;
         padding-left:10%;
         padding-right:10%;
         font-family: 'League Spartan', sans-serif;
@@ -296,7 +296,7 @@ hr{
         font-size: 25px;
     }
     .logo{
-        margin-left:50%;
+        margin-left:30%;
     }
 
     .navbar{
