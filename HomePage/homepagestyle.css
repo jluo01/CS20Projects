@@ -2,7 +2,9 @@
 *{
     box-sizing: border-box;
     padding: 0;
+    margin: 0;
 }
+
 
 h1{
     font-family: "Poppins",sans-serif;
@@ -117,10 +119,11 @@ hr{
     
 }
 
-.box1 p{
+.box1 h2{
     margin-top:-10px;
     font-size: 27px;
-    font-family:"Source Sans Pro",sans-serif;
+    letter-spacing:0.1em;
+    font-family: 'Poppins', sans-serif;
 }
 
 .profile{
