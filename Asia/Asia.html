@@ -22,6 +22,67 @@
 			background-color: rgba(148, 86, 86, 0.5);
 		}
 
+		.is-mobile{
+            display:none;
+        }
+        @media(min-width:900px){
+        .box4{
+			background-color: rgba(148, 86, 86, 0.5);
+            color:white;
+        }
+        .box5{
+                background-image:url(tokyo.jpg);
+                background-position:center;
+                background-size:cover;
+            }
+        }
+        
+        @media (max-width:900px){
+            .box4{
+                background-image:url(tokyo.jpg);
+                background-position:center;
+                background-size:cover;
+            }
+            .box5{
+                background-color: rgba(148, 86, 86, 0.5);
+                color:white;
+            }
+            .locationHeading {
+                position:absolute;
+                padding-top:.7em;
+                width:100%;
+                text-align: center;
+                font-size:40pt;
+                background-color:transparent;
+                display:block;
+                font-family: 'Poppins', sans-serif;
+            }
+            .supportText{
+                font-size:18pt;
+                padding-top:7em;
+                line-height: 1.3em;
+                width:100%;
+                text-align:justify;
+                padding-left:10%;
+                padding-right:10%;
+                font-family: 'League Spartan', sans-serif;
+                display:block;
+            }
+            .subheading{
+                font-size:18pt;
+                background-color:transparent;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .is-mobile{
+                display:block;
+            }
+            .no-mobile{
+                display:none;
+            }
+
+        }
+
 	</style>
 </head>
 <body>
@@ -66,17 +127,30 @@
 		</div>
 		</div>
 
-    	<div class="box4">
-		<div class="locationHeading">Tokyo
-			<div class="subheading">Charming, Bustling, Wondrous.</div>
-		</div>
-		<div class="supportText">
-			Tokyo hosts myriad choices of sight-watching, shopping, and entertainment for its visitors. Ancient temples nestled among modern skyscrapers, beautiful cherry blossoms in the late spring, and vibrant night scenes in Tokyo's central district.
-		</div>
-		</div>
+		<div class="box4" style = "position:relative">
+            <div class = "no-mobile">
+                <div class = "locationHeading">
+                    Tokyo
+                    <div class = subheading>Charming, Bustling, Wondrous.</div>
+                </div>
+                <div class = "supportText" style = "padding-top:8em">
+					Tokyo hosts myriad choices of sight-watching, shopping, and entertainment for its visitors. Ancient temples nestled among modern skyscrapers, beautiful cherry blossoms in the late spring, and vibrant night scenes in Tokyo's central district.
+                </div> 
+            </div>
+        </div>
 
-    	<div class="box5" style="background-image: url(tokyo.jpg)"></div>
-
+		<div class="box5" style = "position:relative">
+            <div class = "is-mobile">
+                <div class = "locationHeading">
+                    Tokyo
+                    <div class = subheading>Charming, Bustling, Wondrous.</div>
+                </div>
+                <div class = "supportText" style = "padding-top:8em">
+					Tokyo hosts myriad choices of sight-watching, shopping, and entertainment for its visitors. Ancient temples nestled among modern skyscrapers, beautiful cherry blossoms in the late spring, and vibrant night scenes in Tokyo's central district.
+                </div> 
+            </div>
+        </div>
+		
     	<div class="box6" style="background-image: url(bangkok.jpg)"></div>
 
     	<div class="box7">
