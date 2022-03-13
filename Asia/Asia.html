@@ -92,5 +92,19 @@
         </div>
 	</div>
     
+	<script type="text/javascript">
+		const hamburger = document.querySelector(".hamburger");
+		const navMenu = document.querySelector(".navbar-text");
+		
+
+
+		hamburger.addEventListener("click", mobileMenu);
+
+		function mobileMenu() {
+   		hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+        }
+
+	</script>
 </body>
 </html>
