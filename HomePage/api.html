@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Api Fun</title>
+    <script>
+        window.onload = function(){        
+            document.getElementById("btn").onclick = function(){
+
+                //Method 1
+                /*response = new XMLHttpRequest();
+                response.open("GET", "https://cat-fact.herokuapp.com/facts",true)
+                data = ""
+                response.onload = function(){
+                    if(this.status == 200){
+                        data = JSON.parse(this.responseText)
+                        console.log(data[1].text)
+                        index = Math.floor(Math.random()*data.length + 1);
+                    console.log(index)
+                    document.getElementById("fact").innerHTML=data[index].text
+                    }
+                }
+                response.send()*/
+
+                //Method 2
+                fetch("https://cat-fact.herokuapp.com/facts")
+                      .then(response => response.json())
+                      .then(data => document.getElementById("fact").innerHTML=data[ index = Math.floor(Math.random()*data.length + 1)].text)
+                      .catch(error => console.log(error))
+            }
+        }
+    </script>
+    <style>
+        h1{
+            margin-top:50px;
+        }
+        #fact{
+            height: auto;
+            width: 500px;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-size: 20px;
+        }
+
+        .questions{
+            margin:30px 0;
+        }
+
+        #btn{
+            margin-bottom: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <center><h1>Facts about Cat</h1>
+    <div id="fact"></div>
+    <input id="btn" type="button" value="Generate fun facts"></center>
+    <div class="questions">
+        <p>Description of the chosen API: The API I choose is called cat-fact, where users can write some fun facts and share it with other cats lovers.</p>
+        <p>Where I found it: I find it in the reading material shared on cavas. <a href="https://github.com/public-apis/public-apis">https://github.com/public-apis/public-apis.</a></p>
+        <p>The option for request is "/facts", as I only want to know the facts of cats, not other irrelevant things on this web.</p>
+        <p>Application: This API is useful for forums where cat lovers can share information. Also, it's useful for people who are planning
+           to raise cats and want to know more about cats.
+        </p>
+        <p></p>
+    </div>
+    <script>
+        
+    </script>
+</body>
+</html>
