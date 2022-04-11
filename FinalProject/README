@@ -1,0 +1,9 @@
+Notes on plotDemo.html:
+Basic functionality achieved, refinements are noted throughout via
+comments in the code
+
+Key next steps: 
+Write functions labeled "to be written" that query SQL 
+Need to write code that pareses the date strings being passed back and forth 
+between functions. No easy way to figure out what # days before 'mm/dd/yyyy' 
+is. Potentially switching to date object? 

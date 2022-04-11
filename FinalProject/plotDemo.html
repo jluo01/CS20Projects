@@ -2,17 +2,211 @@
 <html>
     <head>
         <title>
-
+            Final Project Portal 
         </title>
         <!-- CDN for plotting -->
-            <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
-    </head>
+        <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
+        <script>
+            //To be written 
+            //Queries diary table to figure out what is the total metric for when. 
+            // totalMetric('fat','04/10/2022') returns an int corresponding to 
+            //the total amount of fat logged on 4/10/2022. Returns 0 by default 
+            //if day has nothing logged. 
+            function totalMetric(metric, when){
+                return 2100; 
+            }
+            //To be written
+            //function gets the target for each metric for the current user from
+            //the user table. If user id=1 set a calorie goal of 2000, then
+            //getTarget("calorie") returns (int) 2000. 
+            function getTarget(metric){
+                return 2000;
+            }
+            //Takes in a metric (calories, fat, carbs, etc.) and for what day 
+            //(mm/dd/yyyy). plotProgress("fat","04/11/2022") generates a 
+            //bar chart with the fat consumed on 4/11 and the target 
+            //Status: needs testing after  
+            function plotProgress(metric, when){
+                target = document.getElementById("progressBar");
+                totalMetricValue = totalMetric(metric, when);
+                metricTarget = getTarget(metric)
+                remainingMetric = metricTarget-totalMetricValue;
+
+                //Exceeded target 
+                if (remainingMetric < 0){
+                    actualMetric = {
+                        x: [metric],
+                        y: [metricTarget],
+                        name: 'Target',
+                        type: 'bar',
+                        marker: {
+                            color:['rgba(0,255,0,1)']
+                        }
+                        
+                    };
+                    targetMetric = {
+                        x: [metric],
+                        y: [Math.abs(remainingMetric)],
+                        name: 'Over',
+                        type: 'bar',
+                        marker: {
+                            color:['rgba(255,0,0,1)']
+                        }
+                    };
+                }
+                //Not yet met target 
+                else{
+                    actualMetric = {
+                        x: [metric],
+                        y: [totalMetricValue],
+                        name: 'Actual',
+                        type: 'bar'
+                    };
+                    targetMetric = {
+                        x: [metric],
+                        y: [getTarget(metric)-totalMetricValue],
+                        name: 'Remaining',
+                        type: 'bar'
+                    };
+                    
+                }
+                data = [actualMetric, targetMetric];
+                
+                layout = {barmode: 'relative', title: "Today's " + metric};
+                Plotly.newPlot(target, data, layout);
+            }
+
+            //Generates pie chart of the calorie breakdown by metric
+            //Basic functionality reached, but still missing the ability to put
+            //text at the center of the doughnut 
+            function plotBreakdown(when){
+                fatCalories = totalMetric("fat", when)*9; //Approx 9 cal per g fat
+                carbCalories = totalMetric("carbs", when)*4;
+                proteinCalories = totalMetric("protein", when)*4;
+                //Add more variables if necessary
+
+                totalCalories = fatCalories + carbCalories + proteinCalories; 
+                fatPercentage = fatCalories/totalCalories;
+                carbPercentage = carbCalories/totalCalories;
+                proteinPercentage = proteinCalories/totalCalories;
+
+                data = [{
+                    values: [fatPercentage, carbPercentage, proteinPercentage],
+                    labels: ["Fat", "Carbs", "Protein"],
+                    type: "pie",
+                    name:'Calorie Breakdown',
+                    hole: 0.4,
+                    automargin:true,
+                    textposition: 'inside'
+                }];
+                layout = {
+                    title:"Calorie Breakdown",
+                    annotations: {
+                        font:{size:20},
+                        showarrow: false,
+                        text: totalCalories,
+                        x: 0.17,
+                        y: 0.5
+                    }
+                };
+                target = document.getElementById("dailyBreakdown");
+                Plotly.newPlot(target,data,layout);
+            }
+
+            //plots a bar chart of the week of the metric specified. 
+            //plotOverTime('Calories', '04/11/2022') generates a plot of 
+            //daily total calories for 8 days from 4/4 to 4/11
+            function plotOverTime(metric, when){
+                target = document.getElementById("overTime");
+
+                metricTarget = [];
+                totalMetricValue = [];
+                remainingMetric = [];
+                barColor = [];//
+                for (i = 0; i<8; i++){
+                    metricTarget[i] = getTarget(metric);
+                    totalMetricValue[i] = totalMetric(metric, when);
+                    remainingMetric[i] = metricTarget[i]-totalMetricValue[i];
+                    barColor[i] = remainingMetric[i] < 0 ? 'rgba(255,0,0,1)' : 'rgba(0,0,255,1)';
+                    remainingMetric[i] = Math.abs(remainingMetric[i]);
+                }
+                //Exceeded target 
+                    actualMetric = {
+                        //X array updated when date parser built 
+                        x: ["Day 1", "Day 2" ,"Day 3", "Day 4", "Day 5", "Day 6" , "Day 7", "Today"],
+                        y: metricTarget,
+                        name: 'Target',
+                        type: 'bar',
+                        marker: {
+                            color:['rgba(0,255,0,1)','rgba(0,255,0,1)','rgba(0,255,0,1)','rgba(0,255,0,1)',
+                            'rgba(0,255,0,1)','rgba(0,255,0,1)','rgba(0,255,0,1)','rgba(0,255,0,1)']
+                        }
+                        
+                    };
+                    targetMetric = {
+                        x: ["Day 1", "Day 2" ,"Day 3", "Day 4", "Day 5", "Day 6" , "Day 7", "Today"],
+                        y: remainingMetric,
+                        name: 'Actual',
+                        type: 'bar',
+                        marker: {
+                            color:barColor
+                        }
+                    };
+                
+                data = [actualMetric, targetMetric];
+                
+                layout = {barmode: 'relative', title: metric + "Over Time"};
+                Plotly.newPlot(target, data, layout);
+            }
+        </script>
+        <style>
+            .box{
+                display:flex;
+            }
+        </style>
+        </head>
 
     <body>
-        <div id = "tester" style = "width:600px; height:250px"></div>
+        <div class = "box">
+            <div>
+                <div id = "progressBar" style="width:600px; height:600px"></div>
+                <form>
+                    <select>
+                        <option>Calories</option>
+                        <option>Fat</option>
+                        <option>Protein</option>
+                    </select>
+                </form>
+            </div>
+            <div>
+                <div id = "dailyBreakdown"style="width:600px; height:600px"></div>
+                <form>
+                    <select>
+                        <option>Today</option>
+                        <option>Yesterday</option>
+                        <option>2 Days Ago</option>
+                        <option>...</option>
+                    </select>
+                </form>
+            </div>
+            <div>
+                <div id = "overTime"style="width:600px; height:600px"></div>
+                <form>
+                    <select>
+                        <option>Today</option>
+                        <option>Yesterday</option>
+                        <option>2 Days Ago</option>
+                        <option>...</option>
+                    </select>
+                </form>
+            </div>
+            
+        </div>
+        
         <script>
-            target = document.getElementById("tester");
-            Plotly.newPlot(target, [{x: [1,2,3,4,5], y:[1,2,4,8,16]}], {margin: {t:0}});
+            plotProgress("","");
+            plotBreakdown("");
+            plotOverTime("","");
         </script>
     
     </body>
