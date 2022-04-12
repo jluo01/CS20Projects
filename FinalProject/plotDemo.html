@@ -6,6 +6,27 @@
         </title>
         <!-- CDN for plotting -->
         <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" 
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+        crossorigin="anonymous"></script>
+
+        <script>
+            //Event listener scripts: 
+            $(document).ready(function(){
+                $("#progressSelect").change(function(){
+                    plotProgress($("#progressSelect").val(), '04/12/2022');
+                });
+
+                $("#breakdownSelect").change(function(){
+                    plotBreakdown($("#breakdownSelect").val(), '04/12/2022');
+                });
+
+                $("#overTimeSelectTime, #overTimeSelectMetric").change(function(){
+                    plotOverTime($("#overTimeSelectMetric").val(), $("overTimeSelectTime").val());
+                });
+                
+            });
+        </script>
         <script>
             //To be written 
             //Queries diary table to figure out what is the total metric for when. 
@@ -13,7 +34,17 @@
             //the total amount of fat logged on 4/10/2022. Returns 0 by default 
             //if day has nothing logged. 
             function totalMetric(metric, when){
-                return 2100; 
+                metric = metric.toLowerCase();
+                if (metric == "fat"){
+                    return 2100; //these return statements should be modified for actual queries and when
+                }
+                else if (metric == "calories"){
+                    return 2500;
+                }
+                else if (metric == "carbs"){
+                    return 2600;
+                }
+                return 0;
             }
             //To be written
             //function gets the target for each metric for the current user from
@@ -171,7 +202,7 @@
             <div>
                 <div id = "progressBar" style="width:600px; height:600px"></div>
                 <form>
-                    <select>
+                    <select id = "progressSelect">
                         <option>Calories</option>
                         <option>Fat</option>
                         <option>Protein</option>
@@ -181,7 +212,7 @@
             <div>
                 <div id = "dailyBreakdown"style="width:600px; height:600px"></div>
                 <form>
-                    <select>
+                    <select id = "breakdownSelect"> 
                         <option>Today</option>
                         <option>Yesterday</option>
                         <option>2 Days Ago</option>
@@ -192,11 +223,16 @@
             <div>
                 <div id = "overTime"style="width:600px; height:600px"></div>
                 <form>
-                    <select>
+                    <select id = "overTimeSelectTime">
                         <option>Today</option>
                         <option>Yesterday</option>
                         <option>2 Days Ago</option>
                         <option>...</option>
+                    </select>
+                    <select id = "overTimeSelectMetric">
+                        <option>Calories</option>
+                        <option>Fat</option>
+                        <option>Protein</option>
                     </select>
                 </form>
             </div>
@@ -204,9 +240,9 @@
         </div>
         
         <script>
-            plotProgress("","");
+            plotProgress("calories","");
             plotBreakdown("");
-            plotOverTime("","");
+            plotOverTime("calories","");
         </script>
     
     </body>
