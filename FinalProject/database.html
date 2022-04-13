@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Database code</title>
+<meta charset="utf-8">
+</head>
+
+
+<body>
+    <script>
+        //database information
+        $server = "localhost";
+        $userid = "uo8hchpccgagq";
+        $pw = "tuftscs20";
+        $db= "db3guheulakj3q"; 
+
+
+        //PART 1: login
+        $uname = $_GET("username");
+        $pw = $_GET("password");
+        //QUERY: finding user
+        find_user = "SELECT * FROM users WHERE username=$uname AND password=$pw";
+        find_userid = "SELECT userid FROM users WHERE username=$uname AND password=$pw";
+
+        //PART 2: food diary
+        //QUERY: get all diary entries of the user
+        get_diaries = "SELECT * FROM food WHERE userid=**";
+        //QUERY: add a diary
+        add_diary = "INSERT INTO `food` (`foodid`, `food_name`, `food_cal`, `food_fat`, `food_carbs`, `foot_protein`, `userid`) VALUES (NULL, $food, $cal, $fat, $carb, $protein, $userid)";
+        //QUERY: delete a diary
+        delete_diary = "DELETE FROM `food` WHERE `food`.`foodid` = x";
+        //QUERY: edit a diary
+        edit_diary = "UPDATE `food` SET `x` = 'y' WHERE `food`.`foodid` = $foodid";
+
+        //PART 3: recipes (API)
+        window.onload=function(){
+        res = fetch("https://api.spoonacular.com/recipes/complexSearch")
+          .then(res=>res.text())
+          .then(data=>
+          {
+              data = JSON.parse(data);
+              dishName = data.results.title;
+              dishImage = data.results.image;
+              dishCal = data.results.calories;
+              dishFat = data.results.fat;
+              dishCarbs = data.results.carbs;
+              dishProtein = data.results.protein;
+              message = "";
+              setMessage(message);
+          })
+          .catch(error=>setMessage(error))
+        }
+        function setMessage(msg) {
+            document.getElementById("fetch").innerHTML = msg;
+        }
+
+    </script>
+    <div id="fetch">&nbsp</div>
+
+</body>
+</html>
