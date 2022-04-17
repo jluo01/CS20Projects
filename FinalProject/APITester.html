@@ -1,0 +1,49 @@
+<!-- https://stackoverflow.com/questions/48969495/in-javascript-how-do-i-should-i-use-async-await-with-xmlhttprequest -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            API Tester
+        </title>
+
+        <script>
+            async function callAPI(queryString){
+                return new Promise(function(resolve,reject){
+                    request = new XMLHttpRequest();
+                    url = "https://jil.sgedu.site/FinalProject/queryDatabaseAPI.php?";
+                    url += "time=" + Date.now();
+                    url += queryString; 
+                    request.open("GET", url, true);
+                    request.send();
+                    request.onreadystatechange = function(){
+                        if (request.readyState == 4 && request.status == 200){
+                            theData = JSON.parse(this.responseText);
+                            resolve(theData);
+                        }
+                        else if (request.readyState == 4 && request.status != 200){
+                            error("Failed to connect to API - try again later");
+                        }
+                    }});
+                }           
+
+                async function queryDatabase(metric, when, uid){
+                    query = "&metric= " + metric + "&when=" + when + "&uid=" + 
+                    uid;
+                    // value = await callAPI(query);
+                    alert(await callAPI(query));
+                    //return value;
+                }
+        </script>
+    </head>
+
+    <body>
+        <h1>API Tester</h1> 
+        <div id = "response">
+            <script>
+                queryDatabase("calories","04/17/2022",1);
+            </script>
+        </div>
+    </body>
+
+</html>

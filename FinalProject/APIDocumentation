@@ -1,0 +1,26 @@
+Documentation:
+async function callAPI(queryString)
+* Purpose: returns a promise for a JSON containing DB response 
+* Param: queryString, a fully formed string that contains all of the queries
+to be passed into the GET command. Use queryDatabase() to format this string
+* Return: JSON object containing response
+* Use: call this function with await (e.g., x = await callAPI([queryString])) 
+to prevent sync issues 
+* Additional Notes: Note that the time is passed in to prevent caching issues.
+Do not modify the time parameter, just the queryString. The queryString is 
+formed in a separate function (see function queryDatabase()).
+
+
+async function queryDatabase(metric, day, uid)
+* Purpose: wrapper for all queries
+* Param: metric ("calories", "fat", "carbs", "protein"), day (when the diary
+entry was logged), uid (of the current user)
+* Return: number, should be the sum of all entries of that day that satisfy the 
+parameters (e.g., queryDatabase("fat","04/17/2022",4) returns a number 
+representing the total amount of fat for all diary entries on 4/17/22 by user 4)
+
+queryDatabaseAPI.php
+* Purpose: API that queries the database containing diary entries
+* Param: query string via GET, should be formatted as 
+?time=[unixTime]&metric=[theMetric]&when=[what day to query]&uid=[uid of user]
+* Return: number echoed back to queryDatabase(), 
