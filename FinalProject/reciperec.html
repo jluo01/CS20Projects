@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Recipe Search</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    
+    <style>
+	@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Source+Sans+Pro:wght@300&display=swap');
+    .recipe_form {
+		display: inline-block;
+		justify-content: center;
+		width: 40%;
+		margin: 5% 25%;
+		padding: 20px 30px;
+		border: 4px rgba(159, 84, 145, 0.58) solid;
+		background-color: rgba(149, 26, 171, 0.11);
+	}
+	label {
+		display: inline-block;
+		width: 180px;
+		text-align: left;
+		text-shadow: 2px 2px rgba(112, 128, 144, 0.247);
+	}
+	input {
+		display: inline-block;
+		}
+	form {
+		color: black;
+		border-radius: 4px;
+		font-size: 18px;
+		font-family: 'Source Sans Pro', sans-serif;
+	}
+	h1 {
+		font-family: 'Lobster', cursive;
+		color: rgba(161, 59, 145, 0.78);
+		text-shadow: 3px 3px rgba(112, 128, 144, 0.329);
+	}
+	#submit {
+		background-color:rgba(161, 59, 145, 0.41);
+		padding: 10px 30px;
+		font-size: 18px;
+		font-family: 'Source Sans Pro', sans-serif;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		justify-content: center;
+		margin-left: 20%;
+	}
+	input[type=text],[type=number] {
+		padding: 1px;
+		font-size: 16px;
+		font-family: 'Source Sans Pro', sans-serif;
+	}
+    </style>
+</head> 
+
+<body>
+	<script>
+	$(document).ready(function() {
+		$("#submit").click(function() {
+			var cuisine_type = $("input[name=cuisine]").val();
+			var ingredients = $("input[name=food]").val();
+			var calories = $("input[name=cal]").val();
+
+		
+			request = new XMLHttpRequest();
+			console.log("1 - request object created");
+
+			api = "https://api.spoonacular.com/recipes/complexSearch?apiKey=dcdf2918fe8748acae3501883a9cb414";
+			query_ingredients = "&includeIngredients=" + ingredients;
+			query_cuisine = "&cuisine=" + cuisine_type;
+			query_calories = "&maxCalories=" + calories;
+			query_number = "&number=3";
+
+			query = "";
+			if (ingredients != "") {
+				query += query_ingredients; 
+			}
+			if (cuisine_type != "") {
+				query += query_cuisine; 
+			}
+			if (calories != "") {
+				query += query_calories; 
+			}
+			query += query_number;
+			url = api + query;
+			request.open("GET", url, true);
+			console.log("2 - opened request file");
+
+			request.onreadystatechange = function() {
+				console.log("3 - readystatechange event fired.");
+				if (request.readyState == 4 && request.status == 200) {
+					result = request.responseText;
+					result_json = JSON.parse(result);
+					output = "";
+					if (result_json["totalResults"] == 0) {
+						output += "No such recipes."
+					} else if(result_json["totalResults"] <= 3) {
+						for(i = 0; i < result_json["totalResults"]; i++) {
+							output += result_json["results"][i]["title"] + "<br>";
+							image = result_json["results"][i]["image"];
+							output += "<img src='" + image + "'>"
+						}
+					} else {
+						for(i = 0; i < 3; i++) {
+							output += result_json["results"][i]["title"] + "<br>";
+							image = result_json["results"][i]["image"];
+							output += "<img src='" + image + "'> <br>"
+						}
+					}
+					document.getElementById("data").innerHTML = output;  
+				}
+				else if (request.readyState == 4 && request.status != 200) {
+				document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+				}
+				else if (request.readyState == 3) {
+					document.getElementById("data").innerHTML = "Too soon!  Try again";
+				}
+			}
+			request.send();
+		});
+	});
+
+	
+	</script>
+
+    <div class="recipe_form">
+    <form>
+    <h1>Search for your next meal:</h1>
+    <div class="recipe_search">
+        <label>Cuisine</label><input type="text" id="cuisine" name="cuisine">
+    </div><br>
+    <div class="recipe_search">
+        <label>Ingredients to Include</label><input type="text" id="food" name="food">
+    </div><br>
+    <div class="recipe_search">
+        <label>Calories Cap</label><input type="number" id="cal" name="cal">
+    </div><br>
+    </form>
+	<button id="submit">Submit</button>
+
+    </div>
+	
+	<div id="data">&nbsp</div>
+
+
+</body>
+</html>
