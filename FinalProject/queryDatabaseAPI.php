@@ -41,8 +41,8 @@ $SQLQuery += $theUID;
 //query database
 $diaries = $conn->query($SQLQuery);
 
+$result = 0;
 if ($diaries->num_rows > 0) {
-    $result = 0;
 	while($row = $result->fetch_assoc()) 
 	{
         $result += $row[$theMetric];
