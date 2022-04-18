@@ -1,31 +1,55 @@
-<?php 
-    $SQLQuery = "SELECT ";//Junxing
+<?php
+$server = "localhost";
+$userid = "uo8hchpccgagq";
+$pw = "hhxxttxs";
+$db= "db3guheulakj3q";
 
-    $theMetric = $_GET["metric"];
-    if ($theMetric == "calories"){
-        $SQLQuery += "calories";
-    }
-    else if ($theMetric == "fat"){
-        $SQLQuery += "fat";
-    }
-    else if ($theMetric == "carbs"){
-        $SQLQuery += "carbs";
-    }
-    else if ($theMetric == "protein"){
-        $SQLQuery += "protein";
-    }
+$conn = new mysqli($server, $userid, $pw);
 
-    $theTime = $_GET["when"];
-    $SQLQuery += $theTime;
+if ($conn->connect_error) {
+ die("Connection failed: " . $conn->connect_error);
+}
 
-    $theUID = $_GET["uid"];
-    $SQLQuery += $theUID;
+$conn->select_db($db);
 
-    //Query DB here, sum up all diary entries
+$SQLQuery = "SELECT ";
 
+$theMetric = $_GET["metric"];
+if ($theMetric == "calories"){
+    $SQLQuery += "calories";
+}
+else if ($theMetric == "fat"){
+    $SQLQuery += "fat";
+}
+else if ($theMetric == "carbs"){
+    $SQLQuery += "carbs";
+}
+else if ($theMetric == "protein"){
+    $SQLQuery += "protein";
+}
 
-    $result = 1234;//result should store the sum of all diary entries
+$SQLQuery += " FROM food WHERE date=";
 
-    echo $result;
+$theTime = $_GET["when"];
+$SQLQuery += $theTime;
+
+$SQLQuery += " AND userid=";
+
+$theUID = $_GET["uid"];
+$SQLQuery += $theUID;
+
+//query database
+$diaries = $conn->query($SQLQuery);
+
+if ($diaries->num_rows > 0) {
+    $result = 0;
+	while($row = $result->fetch_assoc()) 
+	{
+        $result += $row[$theMetric];
+	}
+  } 
+
+echo $result;
+
+$conn->close();
 ?>
-    
