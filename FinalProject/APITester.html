@@ -11,15 +11,14 @@
             async function callAPI(queryString){
                 return new Promise(function(resolve,reject){
                     request = new XMLHttpRequest();
-                    url = "https://jil.sgedu.site/FinalProject/queryDatabaseAPI.php?";
+                    url = "https://junxinggu.com/Final/queryDatabaseAPI.php?";
                     url += "time=" + Date.now();
                     url += queryString; 
                     request.open("GET", url, true);
                     request.send();
                     request.onreadystatechange = function(){
                         if (request.readyState == 4 && request.status == 200){
-                            theData = JSON.parse(this.responseText);
-                            resolve(theData);
+                          resolve(this.responseText);
                         }
                         else if (request.readyState == 4 && request.status != 200){
                             error("Failed to connect to API - try again later");
@@ -28,7 +27,7 @@
                 }           
 
                 async function queryDatabase(metric, when, uid){
-                    query = "&metric= " + metric + "&when=" + when + "&uid=" + 
+                    query = "&metric=" + metric + "&when=" + when + "&uid=" + 
                     uid;
                     // value = await callAPI(query);
                     alert(await callAPI(query));
@@ -41,7 +40,7 @@
         <h1>API Tester</h1> 
         <div id = "response">
             <script>
-                queryDatabase("calories","04/18/2022",1);
+                queryDatabase("carbs","2022-04-18",2);
             </script>
         </div>
     </body>
