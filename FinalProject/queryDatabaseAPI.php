@@ -12,43 +12,29 @@ if ($conn->connect_error) {
 
 $conn->select_db($db);
 
-$SQLQuery = "SELECT ";
+$SQLQuery = "SELECT SUM(";
 
 $theMetric = $_GET["metric"];
-if ($theMetric == "calories"){
-    $SQLQuery += "calories";
-}
-else if ($theMetric == "fat"){
-    $SQLQuery += "fat";
-}
-else if ($theMetric == "carbs"){
-    $SQLQuery += "carbs";
-}
-else if ($theMetric == "protein"){
-    $SQLQuery += "protein";
-}
 
-$SQLQuery += " FROM food WHERE date=";
+
+$SQLQuery .= "$theMetric) FROM food WHERE date='";
 
 $theTime = $_GET["when"];
-$SQLQuery += $theTime;
+$SQLQuery .= $theTime;
 
-$SQLQuery += " AND userid=";
+$SQLQuery .= "' AND userid=";
 
 $theUID = $_GET["uid"];
-$SQLQuery += $theUID;
+$SQLQuery .= $theUID;
 
 //query database
-$diaries = $conn->query($SQLQuery);
+$diary = $conn->query($SQLQuery);
 
-$result = 0;
-if ($diaries->num_rows > 0) {
-	while($row = $result->fetch_assoc()) 
-	{
-        $result += $row[$theMetric];
-	}
-  } 
-
+$result = -1;
+if ($diary->num_rows > 0) {
+	$row = $diary->fetch_array();
+    $result = $row[0];
+  }
 echo $result;
 
 $conn->close();
