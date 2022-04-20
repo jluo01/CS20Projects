@@ -4,6 +4,13 @@
         <title>
             Final Project Portal 
         </title>
+        <meta name='viewport' content="width=device-width, initial-scale=1">
+        <style>
+
+        </style>
+
+
+
         <!-- CDN for plotting -->
         <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js" 
@@ -13,38 +20,56 @@
         <script>
             //Event listener scripts: 
             $(document).ready(function(){
+                //Initialization of date
+                todayDate = new Date();
+                date = todayDate.getDate();
+                if (date<10){
+                    date = "0" + date;
+                }
+                month = todayDate.getMonth() + 1;
+                if (month<10){
+                    month = "0" + month;
+                }
+                year = todayDate.getFullYear();
+                todayDate = year + "-" + month + "-" + date;
+                
+                //Attach default value to calendars
+                $("#breakdownCalendar, #overTimeCalendar").attr("value", todayDate);
+
+                //Plot initial 
+                updateProgress("calories", todayDate);
+                plotBreakdown(todayDate);
+                plotOverTime("calories",todayDate);
+
+
+                //Event Listeners
                 $("#progressSelect").change(function(){
                     plotProgress($("#progressSelect").val(), '04/12/2022');
                 });
 
-                $("#breakdownSelect").change(function(){
+                $("#breakdownCalendar").change(function(){
                     plotBreakdown($("#breakdownSelect").val(), '04/12/2022');
                 });
 
-                $("#overTimeSelectTime, #overTimeSelectMetric").change(function(){
+                $("#overTimeCalendar, #overTimeSelectMetric").change(function(){
                     plotOverTime($("#overTimeSelectMetric").val(), $("overTimeSelectTime").val());
                 });
-                
+
+
+                //Plotting Tester Inputs
+                $("#enterProgressTester").click(function(){
+                    newValue = $("#progressTester").val();
+                    plotProgress(newValue, 2000,"Calories");
+                })
             });
         </script>
         <script>
-            //To be written 
-            //Queries diary table to figure out what is the total metric for when. 
-            // totalMetric('fat','04/10/2022') returns an int corresponding to 
-            //the total amount of fat logged on 4/10/2022. Returns 0 by default 
-            //if day has nothing logged. 
+            //Not Tested
             function totalMetric(metric, when){
-                metric = metric.toLowerCase();
-                if (metric == "fat"){
-                    return 2100; //these return statements should be modified for actual queries and when
-                }
-                else if (metric == "calories"){
-                    return 2500;
-                }
-                else if (metric == "carbs"){
-                    return 2600;
-                }
-                return 0;
+                // Commented block here needs to be tested for issues with async 
+                // metric = metric.toLowerCase();
+                // return queryDatabase(metric,when,uid); 
+                return 1000;
             }
             //To be written
             //function gets the target for each metric for the current user from
@@ -56,18 +81,22 @@
             //Takes in a metric (calories, fat, carbs, etc.) and for what day 
             //(mm/dd/yyyy). plotProgress("fat","04/11/2022") generates a 
             //bar chart with the fat consumed on 4/11 and the target 
-            //Status: needs testing after  
-            function plotProgress(metric, when){
-                target = document.getElementById("progressBar");
-                totalMetricValue = totalMetric(metric, when);
-                metricTarget = getTarget(metric)
-                remainingMetric = metricTarget-totalMetricValue;
+            //Calories are in kcal and nutrients are in g 
 
-                //Exceeded target 
+            function updateProgress(metric, when){
+                currTotal = totalMetric(metric, when);
+                target = getTarget(metric);
+                plotProgress(currTotal, target, metric);
+            }
+            function plotProgress(currTotal, target, metricName){
+                thePlot = document.getElementById("progressBar");
+                remainingMetric = target-currTotal;
+                metric = currTotal;
+                //remainingMetric < 0 means exceeded
                 if (remainingMetric < 0){
                     actualMetric = {
-                        x: [metric],
-                        y: [metricTarget],
+                        x: [metricName],
+                        y: [target],
                         name: 'Target',
                         type: 'bar',
                         marker: {
@@ -76,7 +105,7 @@
                         
                     };
                     targetMetric = {
-                        x: [metric],
+                        x: [metricName],
                         y: [Math.abs(remainingMetric)],
                         name: 'Over',
                         type: 'bar',
@@ -88,14 +117,14 @@
                 //Not yet met target 
                 else{
                     actualMetric = {
-                        x: [metric],
-                        y: [totalMetricValue],
+                        x: [metricName],
+                        y: [currTotal],
                         name: 'Actual',
                         type: 'bar'
                     };
                     targetMetric = {
-                        x: [metric],
-                        y: [getTarget(metric)-totalMetricValue],
+                        x: [metricName],
+                        y: [getTarget(metric)-currTotal],
                         name: 'Remaining',
                         type: 'bar'
                     };
@@ -104,7 +133,8 @@
                 data = [actualMetric, targetMetric];
                 
                 layout = {barmode: 'relative', title: "Today's " + metric};
-                Plotly.newPlot(target, data, layout);
+                var config = {responsive:true}
+                Plotly.newPlot(thePlot, data, layout,config);
             }
 
             //Generates pie chart of the calorie breakdown by metric
@@ -141,7 +171,8 @@
                     }
                 };
                 target = document.getElementById("dailyBreakdown");
-                Plotly.newPlot(target,data,layout);
+                var config = {responsive:true}
+                Plotly.newPlot(target,data,layout, config);
             }
 
             //plots a bar chart of the week of the metric specified. 
@@ -185,65 +216,59 @@
                     };
                 
                 data = [actualMetric, targetMetric];
-                
+                var config = {responsive:true}
                 layout = {barmode: 'relative', title: metric + "Over Time"};
-                Plotly.newPlot(target, data, layout);
+                Plotly.newPlot(target, data, layout,config);
             }
         </script>
         <style>
             .box{
-                display:flex;
+                display:inline-block;
+                flex-direction: row;
+                width:100%;
+                min-width:100%;
+            }
+            .plot{
+                max-width:33%;
             }
         </style>
         </head>
 
     <body>
         <div class = "box">
-            <div>
-                <div id = "progressBar" style="width:600px; height:600px"></div>
+            <div class="plot">
+                <div id = "progressBar" ></div>
                 <form>
+                    <input type = "text" id = "progressTester">
+                    <input type = "button" id = "enterProgressTester">
                     <select id = "progressSelect">
                         <option>Calories</option>
                         <option>Fat</option>
                         <option>Protein</option>
+                        <option>Carbs</option>
                     </select>
                 </form>
             </div>
-            <div>
-                <div id = "dailyBreakdown"style="width:600px; height:600px"></div>
+            <div class="plot"class="plot">
+                <div id = "dailyBreakdown"></div>
                 <form>
-                    <select id = "breakdownSelect"> 
-                        <option>Today</option>
-                        <option>Yesterday</option>
-                        <option>2 Days Ago</option>
-                        <option>...</option>
-                    </select>
+                    <input type = "date" id = "breakdownCalendar" >
                 </form>
             </div>
-            <div>
-                <div id = "overTime"style="width:600px; height:600px"></div>
+            <div class="plot">
+                <div id = "overTime"></div>
                 <form>
-                    <select id = "overTimeSelectTime">
-                        <option>Today</option>
-                        <option>Yesterday</option>
-                        <option>2 Days Ago</option>
-                        <option>...</option>
-                    </select>
+                    <input type = "date" id = "overTimeCalendar" >
                     <select id = "overTimeSelectMetric">
                         <option>Calories</option>
                         <option>Fat</option>
                         <option>Protein</option>
+                        <option>Carbs</option>
                     </select>
                 </form>
             </div>
             
         </div>
         
-        <script>
-            plotProgress("calories","");
-            plotBreakdown("");
-            plotOverTime("calories","");
-        </script>
-    
     </body>
 </html>

@@ -6,7 +6,9 @@
         <title>
             API Tester
         </title>
-
+        <script src="https://code.jquery.com/jquery-3.6.0.js" 
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+        crossorigin="anonymous"></script>
         <script>
             async function callAPI(queryString){
                 return new Promise(function(resolve,reject){
@@ -30,17 +32,55 @@
                     query = "&metric=" + metric + "&when=" + when + "&uid=" + 
                     uid;
                     // value = await callAPI(query);
-                    alert(await callAPI(query));
-                    //return value;
+                    // alert(await callAPI(query));
+                    return await callAPI(query);
                 }
+
+
+                $(document).ready(function(){
+                    //Initialize dropdown
+                    todayDate = new Date();
+                    date = todayDate.getDate();
+                    if (date<10){
+                        date = "0" + date;
+                    }
+                    month = todayDate.getMonth() + 1;
+                    alert(month);
+                    if (month<10){
+                        month = "0" + month;
+                    }
+                    year = todayDate.getFullYear();
+                    todayDate = year + "-" + month + "-" + date; 
+                    $("#calendar").attr("value", todayDate);
+
+
+                    $("#progressSelect").change(function(){
+                        alert("Progress triggered");
+                        alert(queryDatabase($("#progressSelect").val().toLowerCase(),$("#calendar").val(),2));
+                    })
+                    $("#calendar").change(function(){
+                        alert("calendar triggered");
+                        alert(queryDatabase($("#progressSelect").val().toLowerCase(),$("#calendar").val(),2));
+                    })
+                })
         </script>
     </head>
 
     <body>
         <h1>API Tester</h1> 
         <div id = "response">
+            <form>
+                <select id = "progressSelect">
+                    <option>Calories</option>
+                    <option>Fat</option>
+                    <option>Protein</option>
+                    <option>Carbs</option>
+                </select>
+                <input type = "date" id = "calendar" >
+            </form>
             <script>
-                queryDatabase("carbs","2022-04-18",2);
+
+                
             </script>
         </div>
     </body>
