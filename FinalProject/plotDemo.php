@@ -2,7 +2,7 @@
 <html>
     <?php 
         session_start();
-        echo "<script> const uid =" . $_SESSION['userid'] . "</script>";
+        //echo "<script> const uid =" . $_SESSION['userid'] . "</script>";
 
     ?>
     <head>
@@ -42,7 +42,7 @@
                           resolve(this.responseText);
                         }
                         else if (request.readyState == 4 && request.status != 200){
-                            error("Failed to connect to API - try again later");
+                            console.log("Failed to connect to API - try again later");
                         }
                     }});
                 }           
@@ -50,12 +50,11 @@
                 async function queryDatabase(metric, when, uid){
                     query = "&metric=" + metric + "&when=" + when + "&uid=" + 
                     uid;
-                    // value = await callAPI(query);
-                    // alert(await callAPI(query));
-                    return 1000;//await callAPI(query);
+                    value = await callAPI(query);
+                    return value;
                 }
                 
-                //Need to query database directly here
+                //Need to query database directly here TODO 
                 function initializeTargets(uid){
                         target = new Array();
                         target['calories'] = 2000;
@@ -77,12 +76,79 @@
             var config = {responsive:true, showAxisDragHandles:false, displayModeBar:false};
            
             async function updateProgress(metric, when){
-                currTotal = await totalMetric(metric.toLowerCase(), when);
+                // currTotal = await totalMetric(metric.toLowerCase(), when);
+                // alert(currTotal);
                 target = targets[metric.toLowerCase()];
-                plotProgress(currTotal, target, metric);
+                currTotal = await totalMetric(metric.toLowerCase(), when)*1;//converts null to int
+                alert(target);
+                metricName = metric;
+                
+                alert("plot variable" + currTotal);
+                var config = {responsive:true, showAxisDragHandles:false, 
+                              displayModeBar:false};
+                thePlot = document.getElementById("progressBar");
+                remainingMetric = target-currTotal;
+                metric = currTotal;
+                //remainingMetric < 0 means exceeded
+                if (remainingMetric < 0){
+                    actualMetric = {
+                        x: [metricName],
+                        y: [target],
+                        name: 'Target',
+                        type: 'bar',
+                        text: target,
+                        textposition: 'auto',
+                        marker: {
+                            color:['rgba(0,255,0,1)']
+                        }
+                        
+                    };
+                    targetMetric = {
+                        x: [metricName],
+                        y: [Math.abs(remainingMetric)],
+                        text: Math.abs(remainingMetric),
+                        textposition: 'auto',
+                        name: 'Over',
+                        type: 'bar',
+                        marker: {
+                            color:['rgba(255,0,0,1)']
+                        }
+                    };
+                }
+                //Not yet met target 
+                else{
+                    actualMetric = {
+                        x: [metricName],
+                        y: [currTotal],
+                        text: currTotal,
+                        textposition: 'outside',
+                        name: 'Actual',
+                        type: 'bar'
+                    };
+                    targetMetric = {
+                        x: [metricName],
+                        y: [target-currTotal],
+                        text: target-currTotal,
+                        textposition: 'auto',
+                        name: 'Remaining',
+                        type: 'bar'
+                    };
+                    
+                }
+                yMax = currTotal > target ? 
+                    (parseInt(currTotal)*1.1) : (parseInt(target)*1.1); 
+                data = [actualMetric, targetMetric];
+                alert(yMax);
+                layout = {barmode: 'relative', title: "Today's " + metricName +
+                          ": " + currTotal, 
+                          yaxis: {fixedrange:true, range:[0,yMax]}, 
+                          xaxis: {fixedrange:true}};
+
+                Plotly.newPlot(thePlot, data, layout, config);
             }
             
             function plotProgress(currTotal, target, metricName){
+                alert("plot variable" + currTotal);
                 var config = {responsive:true, showAxisDragHandles:false, 
                               displayModeBar:false};
                 thePlot = document.getElementById("progressBar");
@@ -137,7 +203,6 @@
                 yMax = currTotal > target ? 
                     (parseInt(currTotal) + 200) : (parseInt(target) + 200); 
                 data = [actualMetric, targetMetric];
-                
                 layout = {barmode: 'relative', title: "Today's " + metricName +
                           ": " + currTotal, 
                           yaxis: {fixedrange:true, range:[0,yMax]}, 
@@ -157,6 +222,12 @@
                 //Add more variables if necessary
 
                 totalCalories = fatCalories + carbCalories + proteinCalories; 
+
+                if (totalCalories <= 0){
+                    $("#noBreakdown").attr("style","display:block");
+                    $("#dailyBreakdown").attr("style","display:none");
+                    return;
+                }
                 fatPercentage = fatCalories/totalCalories;
                 carbPercentage = carbCalories/totalCalories;
                 proteinPercentage = proteinCalories/totalCalories;
@@ -180,6 +251,8 @@
                         y: 0.5
                     }
                 };
+                $("#noBreakdown").attr("style","display:none");
+                $("#dailyBreakdown").attr("style","display:block");
                 var config = {responsive:true, displayModeBar:false,
                               staticPlot:true};
                 target = document.getElementById("dailyBreakdown");
@@ -262,18 +335,18 @@
                 $("#breakdownCalendar, #overTimeCalendar").attr("value", todayDate);
 
                 //Plot initial 
-                updateProgress("Calories", todayDate);
                 plotBreakdown(todayDate);
+                updateProgress("Calories", todayDate);
                 //plotOverTime("calories",todayDate);
 
 
                 //Event Listeners
                 $("#progressSelect").change(function(){
-                    updateProgress($("#progressSelect").val(), '2022-04-12');
+                    updateProgress($("#progressSelect").val(), todayDate);
                 });
 
                 $("#breakdownCalendar").change(function(){
-                    plotBreakdown($("#breakdownSelect").val(), '04/12/2022');
+                    plotBreakdown($("#breakdownCalendar").val());
                 });
 
                 // $("#overTimeCalendar, #overTimeSelectMetric").change(function(){
@@ -353,6 +426,7 @@
                 </form>
             </div>
             <div class="plot"class="plot">
+                <div id = "noBreakdown" style = "display:none">Nothing for today: please log</div>
                 <div id = "dailyBreakdown"></div>
                 <form>
                     <input type = "date" id = "breakdownCalendar" >

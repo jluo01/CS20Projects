@@ -33,8 +33,13 @@ $diary = $conn->query($SQLQuery);
 $result = -1;
 if ($diary->num_rows > 0) {
 	$row = $diary->fetch_array();
-    $result = $row[0];
-  }
+    if (is_null($row)){
+        $result = 0;
+    }
+    else {
+        $result = $row[0];
+    }
+}
 echo $result;
 
 $conn->close();
