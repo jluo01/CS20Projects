@@ -80,10 +80,8 @@
                 // alert(currTotal);
                 target = targets[metric.toLowerCase()];
                 currTotal = await totalMetric(metric.toLowerCase(), when)*1;//converts null to int
-                alert(target);
                 metricName = metric;
                 
-                alert("plot variable" + currTotal);
                 var config = {responsive:true, showAxisDragHandles:false, 
                               displayModeBar:false};
                 thePlot = document.getElementById("progressBar");
@@ -138,7 +136,6 @@
                 yMax = currTotal > target ? 
                     (parseInt(currTotal)*1.1) : (parseInt(target)*1.1); 
                 data = [actualMetric, targetMetric];
-                alert(yMax);
                 layout = {barmode: 'relative', title: "Today's " + metricName +
                           ": " + currTotal, 
                           yaxis: {fixedrange:true, range:[0,yMax]}, 
@@ -146,70 +143,69 @@
 
                 Plotly.newPlot(thePlot, data, layout, config);
             }
-            
-            function plotProgress(currTotal, target, metricName){
-                alert("plot variable" + currTotal);
-                var config = {responsive:true, showAxisDragHandles:false, 
-                              displayModeBar:false};
-                thePlot = document.getElementById("progressBar");
-                remainingMetric = target-currTotal;
-                metric = currTotal;
-                //remainingMetric < 0 means exceeded
-                if (remainingMetric < 0){
-                    actualMetric = {
-                        x: [metricName],
-                        y: [target],
-                        name: 'Target',
-                        type: 'bar',
-                        text: target,
-                        textposition: 'auto',
-                        marker: {
-                            color:['rgba(0,255,0,1)']
-                        }
+            //To remove
+            // function plotProgress(currTotal, target, metricName){
+            //     var config = {responsive:true, showAxisDragHandles:false, 
+            //                   displayModeBar:false};
+            //     thePlot = document.getElementById("progressBar");
+            //     remainingMetric = target-currTotal;
+            //     metric = currTotal;
+            //     //remainingMetric < 0 means exceeded
+            //     if (remainingMetric < 0){
+            //         actualMetric = {
+            //             x: [metricName],
+            //             y: [target],
+            //             name: 'Target',
+            //             type: 'bar',
+            //             text: target,
+            //             textposition: 'auto',
+            //             marker: {
+            //                 color:['rgba(0,255,0,1)']
+            //             }
                         
-                    };
-                    targetMetric = {
-                        x: [metricName],
-                        y: [Math.abs(remainingMetric)],
-                        text: Math.abs(remainingMetric),
-                        textposition: 'auto',
-                        name: 'Over',
-                        type: 'bar',
-                        marker: {
-                            color:['rgba(255,0,0,1)']
-                        }
-                    };
-                }
-                //Not yet met target 
-                else{
-                    actualMetric = {
-                        x: [metricName],
-                        y: [currTotal],
-                        text: currTotal,
-                        textposition: 'outside',
-                        name: 'Actual',
-                        type: 'bar'
-                    };
-                    targetMetric = {
-                        x: [metricName],
-                        y: [target-currTotal],
-                        text: target-currTotal,
-                        textposition: 'auto',
-                        name: 'Remaining',
-                        type: 'bar'
-                    };
+            //         };
+            //         targetMetric = {
+            //             x: [metricName],
+            //             y: [Math.abs(remainingMetric)],
+            //             text: Math.abs(remainingMetric),
+            //             textposition: 'auto',
+            //             name: 'Over',
+            //             type: 'bar',
+            //             marker: {
+            //                 color:['rgba(255,0,0,1)']
+            //             }
+            //         };
+            //     }
+            //     //Not yet met target 
+            //     else{
+            //         actualMetric = {
+            //             x: [metricName],
+            //             y: [currTotal],
+            //             text: currTotal,
+            //             textposition: 'outside',
+            //             name: 'Actual',
+            //             type: 'bar'
+            //         };
+            //         targetMetric = {
+            //             x: [metricName],
+            //             y: [target-currTotal],
+            //             text: target-currTotal,
+            //             textposition: 'auto',
+            //             name: 'Remaining',
+            //             type: 'bar'
+            //         };
                     
-                }
-                yMax = currTotal > target ? 
-                    (parseInt(currTotal) + 200) : (parseInt(target) + 200); 
-                data = [actualMetric, targetMetric];
-                layout = {barmode: 'relative', title: "Today's " + metricName +
-                          ": " + currTotal, 
-                          yaxis: {fixedrange:true, range:[0,yMax]}, 
-                          xaxis: {fixedrange:true}};
+            //     }
+            //     yMax = currTotal > target ? 
+            //         (parseInt(currTotal) + 200) : (parseInt(target) + 200); 
+            //     data = [actualMetric, targetMetric];
+            //     layout = {barmode: 'relative', title: "Today's " + metricName +
+            //               ": " + currTotal, 
+            //               yaxis: {fixedrange:true, range:[0,yMax]}, 
+            //               xaxis: {fixedrange:true}};
 
-                Plotly.newPlot(thePlot, data, layout, config);
-            }
+            //     Plotly.newPlot(thePlot, data, layout, config);
+            // }
 
             //Generates pie chart of the calorie breakdown by metric
             //Basic functionality reached, but still missing the ability to put
@@ -264,47 +260,47 @@
             //daily total calories for 8 days from 4/4 to 4/11
 
             //DEPRECIATED
-            function plotOverTime(metric, when){
-                target = document.getElementById("overTime");
-                metricTarget = [];
-                totalMetricValue = [];
-                remainingMetric = [];
-                barColor = [];//
-                for (i = 0; i<8; i++){
-                    metricTarget[i] = targets[metric];
-                    totalMetricValue[i] = totalMetric(metric, when);
-                    remainingMetric[i] = metricTarget[i]-totalMetricValue[i];
-                    barColor[i] = remainingMetric[i] < 0 ? 'rgba(255,0,0,1)' : 'rgba(0,0,255,1)';
-                    remainingMetric[i] = Math.abs(remainingMetric[i]);
-                }
-                //Exceeded target 
-                    actualMetric = {
-                        //X array updated when date parser built 
-                        x: ["Day 1", "Day 2" ,"Day 3", "Day 4", "Day 5", "Day 6" , "Day 7", "Today"],
-                        y: metricTarget,
-                        name: 'Target',
-                        type: 'bar',
-                        marker: {
-                            color:['rgba(0,255,0,1)','rgba(0,255,0,1)','rgba(0,255,0,1)','rgba(0,255,0,1)',
-                            'rgba(0,255,0,1)','rgba(0,255,0,1)','rgba(0,255,0,1)','rgba(0,255,0,1)']
-                        }
+            // function plotOverTime(metric, when){
+            //     target = document.getElementById("overTime");
+            //     metricTarget = [];
+            //     totalMetricValue = [];
+            //     remainingMetric = [];
+            //     barColor = [];//
+            //     for (i = 0; i<8; i++){
+            //         metricTarget[i] = targets[metric];
+            //         totalMetricValue[i] = totalMetric(metric, when);
+            //         remainingMetric[i] = metricTarget[i]-totalMetricValue[i];
+            //         barColor[i] = remainingMetric[i] < 0 ? 'rgba(255,0,0,1)' : 'rgba(0,0,255,1)';
+            //         remainingMetric[i] = Math.abs(remainingMetric[i]);
+            //     }
+            //     //Exceeded target 
+            //         actualMetric = {
+            //             //X array updated when date parser built 
+            //             x: ["Day 1", "Day 2" ,"Day 3", "Day 4", "Day 5", "Day 6" , "Day 7", "Today"],
+            //             y: metricTarget,
+            //             name: 'Target',
+            //             type: 'bar',
+            //             marker: {
+            //                 color:['rgba(0,255,0,1)','rgba(0,255,0,1)','rgba(0,255,0,1)','rgba(0,255,0,1)',
+            //                 'rgba(0,255,0,1)','rgba(0,255,0,1)','rgba(0,255,0,1)','rgba(0,255,0,1)']
+            //             }
                         
-                    };
-                    targetMetric = {
-                        x: ["Day 1", "Day 2" ,"Day 3", "Day 4", "Day 5", "Day 6" , "Day 7", "Today"],
-                        y: remainingMetric,
-                        name: 'Actual',
-                        type: 'bar',
-                        marker: {
-                            color:barColor
-                        }
-                    };
+            //         };
+            //         targetMetric = {
+            //             x: ["Day 1", "Day 2" ,"Day 3", "Day 4", "Day 5", "Day 6" , "Day 7", "Today"],
+            //             y: remainingMetric,
+            //             name: 'Actual',
+            //             type: 'bar',
+            //             marker: {
+            //                 color:barColor
+            //             }
+            //         };
                 
-                data = [actualMetric, targetMetric];
-                var config = {responsive:true}
-                layout = {barmode: 'relative', title: metric + "Over Time"};
-                Plotly.newPlot(target, data, layout,config);
-            }
+            //     data = [actualMetric, targetMetric];
+            //     var config = {responsive:true}
+            //     layout = {barmode: 'relative', title: metric + "Over Time"};
+            //     Plotly.newPlot(target, data, layout,config);
+            // }
 
         // <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date -->
 
@@ -355,11 +351,11 @@
 
 
                 //Plotting Tester Inputs
-                $("#enterProgressTester").click(function(){
-                    testValue = $("#progressTester").val();
-                    testMetric = $("#progressSelect").val();
-                    plotProgress(testValue, targets[testMetric.toLowerCase()],testMetric);
-                })
+                // $("#enterProgressTester").click(function(){
+                //     testValue = $("#progressTester").val();
+                //     testMetric = $("#progressSelect").val();
+                //     plotProgress(testValue, targets[testMetric.toLowerCase()],testMetric);
+                // })
             });
         </script>
         <style>
@@ -415,8 +411,8 @@
             <div class="plot">
                 <div id = "progressBar" ></div>
                 <form>
-                    <input type = "text" id = "progressTester" style = "border:solid black 1px">
-                    <input type = "button" id = "enterProgressTester" style = "border:solid black 5px">
+                    <!-- <input type = "text" id = "progressTester" style = "border:solid black 1px">
+                    <input type = "button" id = "enterProgressTester" style = "border:solid black 5px"> -->
                     <select id = "progressSelect">
                         <option>Calories</option>
                         <option>Fat</option>
