@@ -208,13 +208,10 @@
             // }
 
             //Generates pie chart of the calorie breakdown by metric
-            //Basic functionality reached, but still missing the ability to put
-            //text at the center of the doughnut 
             async function plotBreakdown(when){
                 fatCalories = await totalMetric("fat", when)*9; //Approx 9 cal per g fat
                 carbCalories = await totalMetric("carbs", when)*4;
                 proteinCalories = await totalMetric("protein", when)*4;
-                
                 //Add more variables if necessary
 
                 totalCalories = fatCalories + carbCalories + proteinCalories; 
@@ -252,7 +249,7 @@
                 var config = {responsive:true, displayModeBar:false,
                               staticPlot:true};
                 target = document.getElementById("dailyBreakdown");
-                Plotly.newPlot(target,data,layout, config);
+                await Plotly.newPlot(target,data,layout, config);
             }
 
             //plots a bar chart of the week of the metric specified. 
@@ -312,7 +309,7 @@
 
             targets = initializeTargets(testUID);
             //Event listener scripts: 
-            $(document).ready(function(){
+            $(document).ready(async function(){
                 
                 //Initialization of date
                 todayDate = new Date();
@@ -331,8 +328,8 @@
                 $("#breakdownCalendar, #overTimeCalendar").attr("value", todayDate);
 
                 //Plot initial 
-                plotBreakdown(todayDate);
-                updateProgress("Calories", todayDate);
+                await plotBreakdown(todayDate);
+                await updateProgress("Calories", todayDate);
                 //plotOverTime("calories",todayDate);
 
 
