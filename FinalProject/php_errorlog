@@ -1,0 +1,60 @@
+[18-Apr-2022 15:15:29 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/customer/www/junxinggu.com/public_html/Final/diary.php:105
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/junxinggu.com/public_html/Final/diary.php on line 105
+[18-Apr-2022 16:45:25 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/customer/www/junxinggu.com/public_html/Final/diary.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/junxinggu.com/public_html/Final/diary.php on line 21
+[18-Apr-2022 17:34:42 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/customer/www/junxinggu.com/public_html/Final/queryDatabaseAPI.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/junxinggu.com/public_html/Final/queryDatabaseAPI.php on line 19
+[18-Apr-2022 17:39:05 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ';' in /home/customer/www/junxinggu.com/public_html/Final/signup.php on line 62
+[18-Apr-2022 17:39:35 UTC] PHP Fatal error:  'break' not in the 'loop' or 'switch' context in /home/customer/www/junxinggu.com/public_html/Final/signup.php on line 61
+[18-Apr-2022 17:45:47 UTC] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/customer/www/junxinggu.com/public_html/Final/queryDatabaseAPI.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/junxinggu.com/public_html/Final/queryDatabaseAPI.php on line 53
+[18-Apr-2022 18:08:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function fetch_fields() in /home/customer/www/junxinggu.com/public_html/Final/queryDatabaseAPI.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/junxinggu.com/public_html/Final/queryDatabaseAPI.php on line 51
+[18-Apr-2022 18:08:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function fetch_fields() in /home/customer/www/junxinggu.com/public_html/Final/queryDatabaseAPI.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/junxinggu.com/public_html/Final/queryDatabaseAPI.php on line 51
+[18-Apr-2022 18:09:10 UTC] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in /home/customer/www/junxinggu.com/public_html/Final/queryDatabaseAPI.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/junxinggu.com/public_html/Final/queryDatabaseAPI.php on line 51
+[18-Apr-2022 18:10:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_column() in /home/customer/www/junxinggu.com/public_html/Final/queryDatabaseAPI.php:52
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/junxinggu.com/public_html/Final/queryDatabaseAPI.php on line 52
+[19-Apr-2022 20:28:39 UTC] PHP Fatal error:  Uncaught Error: Cannot write property in /home/customer/www/junxinggu.com/public_html/Final/login.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/junxinggu.com/public_html/Final/login.php on line 44
+[20-Apr-2022 23:14:33 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/junxinggu.com/public_html/Final/plotDemo.php on line 5
+[20-Apr-2022 23:18:35 UTC] PHP Parse error:  syntax error, unexpected '"', expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/junxinggu.com/public_html/Final/diary.php on line 55
+[21-Apr-2022 23:59:18 UTC] PHP Parse error:  syntax error, unexpected '"', expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/junxinggu.com/public_html/Final/diary.php on line 55
+[23-Apr-2022 20:34:42 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in /home/customer/www/junxinggu.com/public_html/Final/homepage.php on line 51
+[23-Apr-2022 21:15:06 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ';' or ',' in /home/customer/www/junxinggu.com/public_html/Final/homepage.php on line 51
+[23-Apr-2022 21:19:47 UTC] PHP Fatal error:  Uncaught Error: [] operator not supported for strings in /home/customer/www/junxinggu.com/public_html/Final/homepage.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/junxinggu.com/public_html/Final/homepage.php on line 45
+[23-Apr-2022 21:22:50 UTC] PHP Parse error:  syntax error, unexpected '"', expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/junxinggu.com/public_html/Final/homepage.php on line 46
+[23-Apr-2022 21:23:03 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/junxinggu.com/public_html/Final/homepage.php on line 46
+[23-Apr-2022 21:23:16 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/junxinggu.com/public_html/Final/homepage.php on line 46
+[23-Apr-2022 21:24:16 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/junxinggu.com/public_html/Final/homepage.php on line 46
+[23-Apr-2022 21:25:10 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/junxinggu.com/public_html/Final/homepage.php on line 46
+[23-Apr-2022 21:35:56 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/customer/www/junxinggu.com/public_html/Final/homepage.php on line 46
+[23-Apr-2022 21:36:17 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/customer/www/junxinggu.com/public_html/Final/homepage.php on line 46
+[23-Apr-2022 21:38:14 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ';' or ',' in /home/customer/www/junxinggu.com/public_html/Final/homepage.php on line 53
+[23-Apr-2022 22:05:43 UTC] PHP Parse error:  syntax error, unexpected '"', expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/junxinggu.com/public_html/Final/diary.php on line 59
+[23-Apr-2022 22:06:47 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/junxinggu.com/public_html/Final/diary.php on line 59
+[23-Apr-2022 22:07:29 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/junxinggu.com/public_html/Final/diary.php on line 59
+[23-Apr-2022 22:07:37 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/junxinggu.com/public_html/Final/diary.php on line 59
+[25-Apr-2022 23:30:14 UTC] PHP Parse error:  syntax error, unexpected '"', expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/junxinggu.com/public_html/Final/diary.php on line 57

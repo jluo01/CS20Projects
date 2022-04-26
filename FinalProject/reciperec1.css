@@ -1,0 +1,435 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family:'Source Sans Pro', sans-serif;
+}
+ul{
+   list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: inherit;
+}
+
+hr{
+    width: 60%;
+    margin-bottom:-50px;
+}
+
+
+/* navbar */
+.navbar{
+    z-index: 30;
+    width: 100%;
+    height:70px;
+    display:flex;		
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    background-color: white;
+}
+
+.logo{
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    margin-left: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-image:url('logo.png') ;
+    background-size:cover;
+    border:none;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+
+.navbar-text a{
+    font-size:18px;
+    margin:0 25px;
+    padding:0 20px;
+    overflow: hidden;
+}
+.navbar-text a:hover{
+    border-bottom: 1px solid black;
+}
+
+.navbar-text ul{
+    font-family: "Source Sans Pro",sans-serif;
+    font-weight: 300;
+    color: black;
+}
+
+.hamburger{
+    margin-right: 20px;
+    display: none;
+}
+.bar{
+    border: 1px black solid;
+    width: 22px;
+    height: 2px;
+    margin-top: 5px;
+}
+
+.forgot {			
+    margin-top: 30px;
+
+}
+.forgot a{
+    color: white;
+    font-size:18px;
+}
+.forgot a:hover{
+    color: rgba(248, 168, 122, 0.842);
+}
+
+.login{
+    display:flex;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 60px;
+    background-color: rgba(78, 71, 71, 0.5);
+    width: 80px;
+    height:30px;
+    align-items: center;
+    justify-content: center;
+    border:none;
+    font-size: 20px;
+    color:rgb(214, 207, 207);
+}
+
+.login:hover{
+    transform: scale(0.9);
+    transition: all 0.4s ease;
+}
+
+
+
+/* lets go */
+
+.letsgo1{
+    margin-top:50px;
+    height:150px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient(to right, rgba(250, 247, 245, 0.7), rgba(128, 70, 31, 0.9));
+    border-radius:10px;
+    color: white;
+    font-size: 25px; 
+}
+
+/* feature 1 */
+
+.feature1 a{
+    width:150px;
+    height:60px;
+    margin-right:-350px;
+    margin-top: 40px;
+    border:none;
+    border-radius:20px;
+    background-color:rgba(128, 70, 31, 0.5);
+    font-size: 20px;
+    color:white;
+    font-weight: 900;
+    padding-left: 32px;
+    padding-top:15px;
+}
+
+.feature1 a:hover{
+    transform: scale(0.9);
+}
+
+/* feature 2 */
+.feature2 a{
+    width:150px;
+    height:60px;
+    margin-top: 40px;
+    border:none;
+    border-radius:20px;
+    background-color:rgba(128, 70, 31, 0.5);
+    font-size: 20px;
+    color:white;
+    font-weight: 900;
+    padding-left: 32px;
+    padding-top:15px;
+}
+
+.feature2 a:hover{
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+/* contactus */
+.contact{
+    margin-top:100px;
+    height:1000px;
+    display:flex;
+    flex-direction:column;
+    justify-content: top;
+    align-items: center;
+    background-image:linear-gradient(to top, rgba(250, 247, 245, 0.7), rgba(128, 70, 31, 0.9));
+    border-radius:10px;
+    color: white;
+    font-size: 25px; 
+}
+
+/* company information */
+.companyinfo{
+    color:black;
+    margin-top:30px;
+    width:100%;
+    height:50px;
+    background-color: rgba(167, 90, 43, 0.1);
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+@media (min-width:900px){
+    .navbar-text ul{
+        font-family: "Source Sana Pro",sans-serif;
+        display:flex;
+        margin-left: 80px;		
+    }
+/* hero image and login form */
+    .container{
+        height:400px;
+        margin-top:70px;
+        /* display:flex;
+        flex-direction: row; */
+        background-image:url('diary.jpg');
+        background-size:cover;
+        background-position: 0 0;
+        color:white;
+    }
+
+
+/* company profile */
+    .profile{
+        margin-top:50px;
+        width: 100%;
+        height: 600px;
+        display:grid;
+        grid-template-columns: 2fr 1.5fr;
+    
+    }
+
+/* all images styles are here */
+.img1{
+    margin-left: -80px;
+    background-image: url("health3.png");
+    background-size: 600px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.img2{
+    margin-left: 80px;
+    background-image: url("diary.png");
+    background-size: 370px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.img3{
+    margin-left: -80px;
+    background-image: url("question.png");
+    background-size: 370px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.img4{
+    margin-left: 80px;
+    background-image: url("analysis.png");
+    background-size: 500px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+}
+@media (max-width:900px){
+/* hero image */
+    /* #container{
+        height:700px;
+        margin-top:70px;
+        display:flex;
+        flex-direction: column;
+        background-image:url('food1.jpeg');
+        background-size:cover;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        justify-content:space-around;
+        align-items: center;
+        overflow: visible;
+    } */
+        .container {
+        height:500px;
+        margin-top:70px;
+        /* display:flex;
+        flex-direction: row; */
+        background-image:url('diary.jpg');
+        background-size:cover;
+        background-position: 0 0;
+        color:white;
+    }
+
+    .title{
+        height:300px;
+        width:100%;
+        background-color: rgba(78, 71, 71, 0.5);
+        color: white;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items: center;
+    }
+    
+
+    .logo{
+        margin-left:40%;
+        
+    }
+
+    .navbar{
+        z-index: 20;
+    }
+
+/* company profile */
+.profile{
+    margin-top:50px;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* feature1 */
+    .feature1{
+        margin-top:180px;
+        display:grid;
+        grid-template-rows: 1.5fr 2fr;
+        width: 100%;
+        height: 700px;
+    
+    }
+/* feature2 */
+    .feature2{
+        margin-top:180px;
+        margin-bottom: -100px;
+        width: 100%;
+        height: 950px;
+        display:grid;
+        grid-template-rows: 1fr 1.5fr;      
+    }
+
+    .feature2 a{
+        margin-left:380px;
+    }
+
+    .feature2 div:nth-child(1){
+        margin-top: -100px;
+        grid-row:2/3;
+
+    }
+
+    .navbar-text.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top:70px;
+        height:200px;
+        transform:scale(1);
+        transition: all 0.2s ease;
+    }
+
+    .navbar-text{
+        width: 100%;
+        background-color: rgba(78, 71, 71, 1);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top:4.35em;
+        transform:scale(0);
+        height:0px;
+    }
+    .navbar-text li{
+        margin-top:18px;
+        margin-bottom: 18px;
+    }
+
+    .navbar-text a{
+        font-size: 20px;
+    }
+    .navbar-text a:hover{
+        border-bottom: 1px white solid;
+    }
+
+    .navbar-text li a{
+        color:white;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger:hover{
+        cursor: pointer;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* all images styles are here */
+    .img1{
+        display:none;
+       
+    }
+
+    .img2{
+        margin-left: 80px;
+        background-image: url("diary.png");
+        background-size: 370px;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .img3{
+        margin-left: 80px;
+        background-image: url("question.png");
+        background-size: 370px;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .img4{
+        margin-left: 0px;
+        background-image: url("analysis.png");
+        background-size: 500px;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+}		

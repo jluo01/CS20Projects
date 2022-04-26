@@ -3,7 +3,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Recipe Search</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css" href="reciperec.css">
+	<link rel="stylesheet" type="text/css" href="reciperec1.css">
 
     
     <style>
@@ -11,20 +11,20 @@
     .recipe_form {
 		display: inline-block;
 		text-align: center;
-		width: 40%;
-		margin: 5% 27%;
-		padding: 20px 30px;
-		border: 4px rgba(159, 84, 145, 0.58) solid;
-		/* background-color: rgba(149, 26, 171, 0.11); */
+		width: 50%;
+		margin: 5% 24%;
+		padding: 20px 30px 30px 30px;
         background-color: rgba(78, 71, 71, 0.5);
-       color: white;
+       	color: white;
 
 	}
 	label {
 		display: inline-block;
-		width: 180px;
+		width: 250px;
 		text-align: left;
+		color: white;
 		text-shadow: 2px 2px rgba(112, 128, 144, 0.247);
+		font-size: 22px;
 	}
 	input {
 		display: inline-block;
@@ -41,23 +41,32 @@
 		text-shadow: 3px 3px rgba(112, 128, 144, 0.329);
 		text-align: center;
 		margin: 10px 30px 30px 30px;
+		color: white;
 
 	}
+    h3 {
+        font-family: 'Source Sans Pro', sans-serif;
+        color: white;
+
+    }
 	#result {
 		text-align: center;
 		font-size: 30px;
 		font-family: 'Source Sans Pro', sans-serif;
 		text-shadow: 2px 2px rgba(112, 128, 144, 0.247);
+		margin-top: 50px;
 	}
 	#submit {
-		background-color:rgba(161, 59, 145, 0.41);
+		background-color:rgba(198, 151, 50, 0.635);
 		padding: 10px 30px;
-		font-size: 18px;
+		font-size: 22px;
 		font-family: 'Source Sans Pro', sans-serif;
 		border: none;
 		border-radius: 5px;
 		cursor: pointer;
 		justify-content: center;
+		color: white;
+		margin-top: 10px;
 	}
 	input[type=text],[type=number] {
 		padding: 1px;
@@ -74,6 +83,10 @@
 	.dish {
 		margin:40px;
 	}
+
+    .container {
+        height: 550px;
+    }
     </style>
 </head> 
 
@@ -150,12 +163,12 @@
 	</script>
 
 	<div class="navbar">
-		<a href="https://jluo01.github.io/CS20Projects/HomePage/homepage.html">
+		<a href="https://junxinggu.com/Final/homepage.php">
 			<button class="logo"></button>
 	    </a>
 		<nav class="navbar-text">
 			<ul>
-				<li><a href="https://junxinggu.com/Final/plotDemo.html">My&nbspPortal</a></li>
+				<li><a href="https://junxinggu.com/Final/userPortal.php">My&nbspPortal</a></li>
 				<li><a href="https://junxinggu.com/Final/reciperec.html">Recipe&nbspSearch</a></li>
 				<li><a href="https://junxinggu.com/Final/diary.php">Diary&nbspLog</a></li>
 			</ul>
@@ -173,6 +186,7 @@
     <div class="recipe_form">
         <form>
             <h1>Search for your next meal:</h1>
+            <h3><em>Check out the recommended dishes based on your preferences.</em></h3><br><br>
             <div class="recipe_search">
                 <label>Cuisine</label><input type="text" id="cuisine" name="cuisine">
             </div><br>
