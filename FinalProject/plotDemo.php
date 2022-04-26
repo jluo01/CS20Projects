@@ -56,12 +56,38 @@
                 
                 //Need to query database directly here TODO 
                 function initializeTargets(uid){
-                        target = new Array();
-                        target['calories'] = 2000;
-                        target['fat'] = 40;
-                        target['carbs'] = 50;
-                        target['protein'] = 120; 
-                        return target; 
+                        // target = new Array();
+                        <?php
+                        $server = "localhost";
+                        $userid = "uo8hchpccgagq";
+                        $pw = "hhxxttxs";
+                        $db= "db3guheulakj3q";
+
+                        $conn = new mysqli($server, $userid, $pw);
+
+                        if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                        }
+
+                        $conn->select_db($db);
+
+                        $SQLQuery = "SELECT target_cal, target_fat, target_carbs, target_protein FROM users WHERE userid=";
+                        $SQLQuery .= $_SESSION['userid'];
+
+                        //query database
+                        $results = $conn->query($SQLQuery);
+                        $target = [];
+
+                        if ($results->num_rows > 0) {
+                            $row = $results->fetch_assoc();
+                            $target['calories'] = $row['target_cal'];
+                            $target['fat'] = $row['target_fat'];
+                            $target['carbs'] = $row['target_carbs'];
+                            $target['protein'] = $row['target_protein']; 
+                        }
+                        $conn->close();
+                        return $target; 
+                        ?>
                 }
                 
                 //Not Tested - need async? 
